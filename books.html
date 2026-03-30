@@ -20,11 +20,9 @@
   </script>
 </head>
 <body class="bg-gray-50 text-gray-800">
-
-<!-- ── Toast ─────────────────────────────────────────────── -->
+ 
 <div id="toast-container" class="toast-container"></div>
-
-<!-- ── Search Overlay ──────────────────────────────────────── -->
+ 
 <div id="search-overlay" class="search-overlay">
   <div class="w-full max-w-2xl px-4">
     <div class="flex items-center bg-white bg-opacity-10 border border-white border-opacity-20 rounded-2xl px-4 py-3 mb-6">
@@ -38,8 +36,7 @@
     <div id="search-results" class="space-y-1"></div>
   </div>
 </div>
-
-<!-- ── Book Modal ───────────────────────────────────────────── -->
+ 
 <div id="book-modal" class="modal-overlay">
   <div class="modal-box">
     <div class="flex justify-end p-4 pb-0">
@@ -50,7 +47,7 @@
     <div id="modal-body"></div>
   </div>
 </div>
-
+ 
 <!-- ── NAVBAR ───────────────────────────────────────────────── -->
 <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
@@ -61,7 +58,7 @@
       <div class="hidden md:flex items-center gap-7">
         <a href="index.html" class="nav-link text-gray-700 hover:text-indigo-600 font-medium text-sm transition-colors">Home</a>
         <a href="books.html" class="nav-link active text-gray-700 hover:text-indigo-600 font-medium text-sm transition-colors">Books</a>
-        <a href="books.html" class="nav-link text-gray-700 hover:text-indigo-600 font-medium text-sm transition-colors">Categories</a>
+        <a href="categories.html" class="nav-link text-gray-700 hover:text-indigo-600 font-medium text-sm transition-colors">Categories</a>
         <a href="index.html#about" class="nav-link text-gray-700 hover:text-indigo-600 font-medium text-sm transition-colors">About</a>
       </div>
       <div class="flex items-center gap-1">
@@ -85,6 +82,7 @@
     <div class="px-4 py-3 space-y-1">
       <a href="index.html" class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">Home</a>
       <a href="books.html" class="block px-3 py-2.5 text-indigo-600 font-semibold rounded-xl bg-indigo-50 transition-colors">Books</a>
+      <a href="categories.html" class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">Categories</a>
       <a href="index.html#about" class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">About</a>
       <a href="cart.html" class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">
         <i class="fas fa-shopping-cart mr-2"></i>Cart
@@ -92,7 +90,7 @@
     </div>
   </div>
 </nav>
-
+ 
 <!-- ── PAGE HEADER ─────────────────────────────────────────── -->
 <div class="mt-16 bg-gradient-to-br from-sky-900 via-sky-800 to-sky-700 py-10 px-4">
   <div class="max-w-7xl mx-auto sm:px-6">
@@ -104,21 +102,20 @@
     </div>
   </div>
 </div>
-
+ 
 <!-- ── MAIN CONTENT ───────────────────────────────────────── -->
 <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
   <div class="flex flex-col lg:flex-row gap-7">
-
+ 
     <!-- ── Filter Sidebar ───────────────────────────────── -->
     <aside class="lg:w-64 flex-shrink-0">
-      <!-- Mobile Filter Toggle -->
       <button id="filter-toggle" class="lg:hidden w-full flex items-center justify-between bg-white border border-gray-200 rounded-2xl px-4 py-3 text-sm font-semibold text-gray-700 mb-3 shadow-sm">
         <span><i class="fas fa-sliders-h mr-2 text-indigo-600"></i>Filters</span>
         <i class="fas fa-chevron-down text-gray-400 transition-transform" id="filter-chevron"></i>
       </button>
-
+ 
       <div id="filter-panel" class="hidden lg:block space-y-5">
-        <!-- Search within catalog -->
+        <!-- Search -->
         <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
           <h3 class="font-serif font-semibold text-gray-900 mb-3 text-sm">Search</h3>
           <div class="relative">
@@ -127,7 +124,7 @@
                    class="w-full pl-8 pr-3 py-2.5 border border-gray-200 rounded-xl text-sm outline-none focus:border-indigo-400 transition-colors" />
           </div>
         </div>
-
+ 
         <!-- Categories -->
         <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
           <h3 class="font-serif font-semibold text-gray-900 mb-3 text-sm">Category</h3>
@@ -174,20 +171,20 @@
             </label>
           </div>
         </div>
-
-        <!-- Price Range -->
+ 
+        <!-- Price Range (ZAR) -->
         <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
-          <h3 class="font-serif font-semibold text-gray-900 mb-3 text-sm">Price Range</h3>
+          <h3 class="font-serif font-semibold text-gray-900 mb-3 text-sm">Price Range (ZAR)</h3>
           <div class="flex justify-between text-xs text-gray-500 mb-2">
-            <span>$0</span>
-            <span id="price-label" class="font-semibold text-indigo-600">Up to $30</span>
+            <span>R0</span>
+            <span id="price-label" class="font-semibold text-indigo-600">Up to R420</span>
           </div>
-          <input type="range" id="price-range" min="5" max="30" value="30" step="1" class="w-full" />
+          <input type="range" id="price-range" min="89" max="420" value="420" step="10" class="w-full" />
           <div class="flex justify-between text-xs text-gray-400 mt-1">
-            <span>$5</span><span>$30</span>
+            <span>R89</span><span>R420</span>
           </div>
         </div>
-
+ 
         <!-- Rating -->
         <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
           <h3 class="font-serif font-semibold text-gray-900 mb-3 text-sm">Minimum Rating</h3>
@@ -206,11 +203,15 @@
             </label>
           </div>
         </div>
-
+ 
         <!-- Special -->
         <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
           <h3 class="font-serif font-semibold text-gray-900 mb-3 text-sm">Special</h3>
           <div class="space-y-2">
+            <label class="flex items-center gap-2.5 cursor-pointer">
+              <input type="checkbox" id="filter-bestsellers" class="accent-indigo-600 rounded" />
+              <span class="text-sm text-gray-600">Bestsellers</span>
+            </label>
             <label class="flex items-center gap-2.5 cursor-pointer">
               <input type="checkbox" id="filter-sale" class="accent-indigo-600 rounded" />
               <span class="text-sm text-gray-600">On Sale</span>
@@ -221,14 +222,13 @@
             </label>
           </div>
         </div>
-
-        <!-- Reset -->
+ 
         <button id="reset-filters" class="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-2.5 rounded-xl text-sm transition-colors">
           <i class="fas fa-times mr-1"></i> Reset Filters
         </button>
       </div>
     </aside>
-
+ 
     <!-- ── Books Main Area ───────────────────────────────── -->
     <div class="flex-1 min-w-0">
       <!-- Sort Bar -->
@@ -243,10 +243,10 @@
           <button class="sort-btn text-xs font-semibold px-3 py-1.5 rounded-lg border border-gray-200 text-gray-600 transition-all" data-sort="title">A–Z</button>
         </div>
       </div>
-
+ 
       <!-- Books Grid -->
       <div id="books-grid" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4"></div>
-
+ 
       <!-- Empty state -->
       <div id="empty-state" class="hidden text-center py-20">
         <div class="text-6xl mb-4">📭</div>
@@ -256,7 +256,7 @@
           Clear Filters
         </button>
       </div>
-
+ 
       <!-- Load More -->
       <div class="text-center mt-10" id="load-more-wrap">
         <button id="load-more" class="bg-white hover:bg-indigo-50 text-indigo-600 font-semibold px-8 py-3 rounded-2xl border border-indigo-200 hover:border-indigo-400 transition-all shadow-sm text-sm">
@@ -265,8 +265,110 @@
       </div>
     </div>
   </div>
-</div>
+ 
+  <!-- ── USED BOOKS SECTION ─────────────────────────────── -->
+  <div id="used" class="mt-16 scroll-mt-24">
+    <div class="used-books-bg rounded-3xl p-8 md:p-10">
+      <!-- Header -->
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+        <div>
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center shadow-md">
+              <i class="fas fa-recycle text-white"></i>
+            </div>
+            <span class="text-xs font-bold text-amber-700 bg-amber-100 px-3 py-1 rounded-full uppercase tracking-wide border border-amber-200">Pre-Owned Collection</span>
+          </div>
+          <h2 class="font-serif font-bold text-3xl text-gray-900 mb-1">Used Books</h2>
+          <p class="text-gray-500 text-sm max-w-xl">Big savings on pre-owned copies — all inspected and graded by our team. Same great stories, friendlier prices.</p>
+        </div>
+      </div>
 
+      <!-- Condition Key & Filters Row -->
+      <div class="space-y-5 mb-8">
+        <!-- Condition Legend -->
+        <div class="flex items-center gap-4 flex-wrap">
+          <span class="text-xs text-gray-500 font-semibold uppercase tracking-wide">Condition:</span>
+          <span class="flex items-center gap-1.5 text-xs font-semibold text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full border border-emerald-200">
+            <span class="w-2 h-2 bg-emerald-500 rounded-full"></span> Like New — barely touched
+          </span>
+          <span class="flex items-center gap-1.5 text-xs font-semibold text-sky-700 bg-sky-100 px-3 py-1 rounded-full border border-sky-200">
+            <span class="w-2 h-2 bg-sky-500 rounded-full"></span> Very Good — light wear only
+          </span>
+          <span class="flex items-center gap-1.5 text-xs font-semibold text-amber-700 bg-amber-100 px-3 py-1 rounded-full border border-amber-200">
+            <span class="w-2 h-2 bg-amber-500 rounded-full"></span> Good — clearly read, fully intact
+          </span>
+        </div>
+
+        <!-- Sort & Filter Bar -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white bg-opacity-80 rounded-2xl px-5 py-3.5 shadow-sm border border-amber-100">
+          <p class="text-sm text-gray-500"><span id="used-results-count" class="font-bold text-gray-900">10</span> pre-owned books available</p>
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-xs text-gray-400 font-medium">Sort by:</span>
+            <button class="used-sort-btn active text-xs font-semibold px-3 py-1.5 rounded-lg border border-amber-200 transition-all" data-sort="default">Featured</button>
+            <button class="used-sort-btn text-xs font-semibold px-3 py-1.5 rounded-lg border border-amber-200 text-gray-600 transition-all" data-sort="price-asc">Price ↑</button>
+            <button class="used-sort-btn text-xs font-semibold px-3 py-1.5 rounded-lg border border-amber-200 text-gray-600 transition-all" data-sort="price-desc">Price ↓</button>
+            <button class="used-sort-btn text-xs font-semibold px-3 py-1.5 rounded-lg border border-amber-200 text-gray-600 transition-all" data-sort="saving">Savings ↓</button>
+            <button class="used-sort-btn text-xs font-semibold px-3 py-1.5 rounded-lg border border-amber-200 text-gray-600 transition-all" data-sort="rating">Rating ↓</button>
+          </div>
+        </div>
+
+        <!-- Quick Filters -->
+        <div class="flex flex-wrap gap-2">
+          <button class="used-condition-filter text-xs font-semibold px-4 py-2 rounded-lg border border-emerald-300 text-emerald-700 bg-emerald-50 hover:bg-emerald-100 transition-all" data-condition="Like New">
+            <i class="fas fa-star mr-1"></i> Like New
+          </button>
+          <button class="used-condition-filter text-xs font-semibold px-4 py-2 rounded-lg border border-sky-300 text-sky-700 bg-sky-50 hover:bg-sky-100 transition-all" data-condition="Very Good">
+            <i class="fas fa-check-circle mr-1"></i> Very Good
+          </button>
+          <button class="used-condition-filter text-xs font-semibold px-4 py-2 rounded-lg border border-amber-300 text-amber-700 bg-amber-50 hover:bg-amber-100 transition-all" data-condition="Good">
+            <i class="fas fa-book mr-1"></i> Good
+          </button>
+          <button id="used-reset-filters" class="text-xs font-semibold px-4 py-2 rounded-lg border border-gray-300 text-gray-700 bg-gray-50 hover:bg-gray-100 transition-all">
+            <i class="fas fa-times mr-1"></i> Clear
+          </button>
+        </div>
+      </div>
+
+      <!-- Used Books Grid -->
+      <div id="used-books-grid" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4"></div>
+
+      <!-- Empty State -->
+      <div id="used-empty-state" class="hidden text-center py-20">
+        <div class="text-6xl mb-4">📭</div>
+        <h3 class="font-serif font-bold text-gray-800 text-xl mb-2">No pre-owned books found</h3>
+        <p class="text-gray-500 text-sm">Try adjusting your filters to find more options.</p>
+        <button id="used-reset-filters-empty" class="mt-5 bg-amber-500 hover:bg-amber-600 text-white font-semibold px-6 py-2.5 rounded-xl text-sm transition-colors">
+          Clear Filters
+        </button>
+      </div>
+
+      <!-- Load More -->
+      <div class="text-center mt-10" id="used-load-more-wrap">
+        <button id="used-load-more" class="bg-white hover:bg-amber-50 text-amber-600 font-semibold px-8 py-3 rounded-2xl border border-amber-200 hover:border-amber-400 transition-all shadow-sm text-sm">
+          <i class="fas fa-plus mr-2"></i>Load More Pre-Owned Books
+        </button>
+      </div>
+ 
+      <!-- Sell your books CTA -->
+      <div class="mt-10 bg-white bg-opacity-80 border-2 border-amber-200 rounded-2xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 bg-amber-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow">
+            <i class="fas fa-leaf text-white text-lg"></i>
+          </div>
+          <div>
+            <h3 class="font-serif font-bold text-gray-900">Have books to sell?</h3>
+            <p class="text-gray-500 text-sm">We buy quality pre-owned books. Email us for a quote and earn store credit.</p>
+          </div>
+        </div>
+        <a href="mailto:hello@musabooks.com?subject=I want to sell my books" class="flex-shrink-0 inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-bold px-6 py-3 rounded-2xl transition-all shadow text-sm">
+          <i class="fas fa-paper-plane"></i> Get in Touch
+        </a>
+      </div>
+    </div>
+  </div>
+ 
+</div>
+ 
 <!-- ── FOOTER ────────────────────────────────────────────── -->
 <footer class="bg-gray-900 text-gray-300 pt-14 pb-8 mt-12">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
@@ -285,6 +387,7 @@
         <ul class="space-y-2.5 text-sm">
           <li><a href="index.html" class="hover:text-indigo-400 transition-colors">Home</a></li>
           <li><a href="books.html" class="hover:text-indigo-400 transition-colors">Browse Books</a></li>
+          <li><a href="books.html#used" class="hover:text-amber-400 transition-colors"><i class="fas fa-recycle text-xs mr-1"></i>Used Books</a></li>
           <li><a href="cart.html" class="hover:text-indigo-400 transition-colors">Shopping Cart</a></li>
         </ul>
       </div>
@@ -301,46 +404,44 @@
         <h4 class="font-serif font-semibold text-white mb-4">Contact</h4>
         <ul class="space-y-2.5 text-sm">
           <li class="flex items-center gap-2"><i class="fas fa-envelope text-indigo-400 text-xs w-4"></i><a href="mailto:hello@musabooks.com" class="hover:text-indigo-400">hello@musabooks.com</a></li>
-          <li class="flex items-center gap-2"><i class="fas fa-phone text-indigo-400 text-xs w-4"></i><span>+1 (555) 123-4567</span></li>
+          <li class="flex items-center gap-2"><i class="fas fa-phone text-indigo-400 text-xs w-4"></i><span>+27 55 123 4567</span></li>
         </ul>
       </div>
     </div>
     <div class="border-t border-gray-800 pt-6 text-center text-xs text-gray-500">
-      <p>&copy; 2026 Musa Bookstore. All rights reserved.</p>
+      <p>&copy; 2026 Musa Bookstore. All rights reserved. · All prices in ZAR (R)</p>
     </div>
   </div>
 </footer>
-
-<!-- Scroll to top -->
+ 
 <button id="scroll-top" class="w-11 h-11 bg-sky-600 hover:bg-sky-700 text-white rounded-2xl flex items-center justify-center shadow-lg transition-all">
   <i class="fas fa-arrow-up text-sm"></i>
 </button>
-
-<!-- ── SCRIPTS ────────────────────────────────────────────── -->
+ 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="js/app.js"></script>
 <script>
 $(function () {
-
-  // ── State ────────────────────────────────────────────────
-  let currentSort    = 'default';
-  let visibleCount   = 12;
-  const PAGE_SIZE    = 8;
-
-  // ── Read URL params ──────────────────────────────────────
-  const urlParams  = new URLSearchParams(window.location.search);
-  const urlCat     = urlParams.get('category');
+ 
+  let currentSort  = 'default';
+  let visibleCount = 12;
+  const PAGE_SIZE  = 8;
+ 
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlCat    = urlParams.get('category');
+  const urlBestSellers = urlParams.get('bestsellers');
   if (urlCat) {
     $('input[name="category"][value="' + urlCat + '"]').prop('checked', true);
   }
-
-  // ── Mobile filter panel toggle ───────────────────────────
+  if (urlBestSellers === 'true') {
+    $('#filter-bestsellers').prop('checked', true);
+  }
+ 
   $('#filter-toggle').on('click', function () {
     $('#filter-panel').toggleClass('hidden');
     $('#filter-chevron').toggleClass('rotate-180');
   });
-
-  // ── Get current filter state ─────────────────────────────
+ 
   function getFilters() {
     return {
       search   : $('#catalog-search').val().trim().toLowerCase(),
@@ -348,36 +449,31 @@ $(function () {
       maxPrice : parseFloat($('#price-range').val()),
       minRating: parseFloat($('input[name="rating"]:checked').val()),
       onSale   : $('#filter-sale').prop('checked'),
-      newOnly  : $('#filter-new').prop('checked')
+      newOnly  : $('#filter-new').prop('checked'),
+      bestsellers: $('#filter-bestsellers').prop('checked')
     };
   }
-
-  // ── Filter & sort books ──────────────────────────────────
+ 
   function filterBooks() {
     const f = getFilters();
     let books = [...BOOKS_DATA];
-
     if (f.search)    books = books.filter(b => b.title.toLowerCase().includes(f.search) || b.author.toLowerCase().includes(f.search));
     if (f.category && f.category !== 'all') books = books.filter(b => b.category === f.category);
     books = books.filter(b => b.price <= f.maxPrice);
     if (f.minRating > 0) books = books.filter(b => b.rating >= f.minRating);
     if (f.onSale)    books = books.filter(b => b.originalPrice !== null);
     if (f.newOnly)   books = books.filter(b => b.newArrival);
-
-    // Sort
+    if (f.bestsellers) books = books.filter(b => b.featured);
     if (currentSort === 'price-asc')  books.sort((a,b) => a.price - b.price);
     if (currentSort === 'price-desc') books.sort((a,b) => b.price - a.price);
     if (currentSort === 'rating')     books.sort((a,b) => b.rating - a.rating);
     if (currentSort === 'title')      books.sort((a,b) => a.title.localeCompare(b.title));
-
     return books;
   }
-
-  // ── Render books grid ────────────────────────────────────
+ 
   function renderBooks() {
     const books   = filterBooks();
     const visible = books.slice(0, visibleCount);
-
     $('#results-count').text(books.length);
     if (books.length === 0) {
       $('#books-grid').empty();
@@ -386,33 +482,112 @@ $(function () {
     } else {
       $('#empty-state').addClass('hidden');
       $('#books-grid').html(visible.map(b => buildBookCard(b)).join(''));
-      if (visibleCount >= books.length) {
-        $('#load-more-wrap').addClass('hidden');
-      } else {
-        $('#load-more-wrap').removeClass('hidden');
-      }
+      $('#load-more-wrap').toggleClass('hidden', visibleCount >= books.length);
+    }
+  }
+ 
+  // ── USED BOOKS FILTERING & SORTING ──────────────────────
+  let usedCurrentSort = 'default';
+  let usedVisibleCount = 12;
+  const USED_PAGE_SIZE = 8;
+  let usedConditionFilter = null;
+
+  function getUsedFilters() {
+    return {
+      condition: usedConditionFilter
+    };
+  }
+
+  function filterUsedBooks() {
+    const f = getUsedFilters();
+    let books = [...USED_BOOKS_DATA];
+    if (f.condition) books = books.filter(b => b.condition === f.condition);
+    if (usedCurrentSort === 'price-asc')  books.sort((a,b) => a.price - b.price);
+    if (usedCurrentSort === 'price-desc') books.sort((a,b) => b.price - a.price);
+    if (usedCurrentSort === 'saving')     books.sort((a,b) => (b.originalPrice - b.price) - (a.originalPrice - a.price));
+    if (usedCurrentSort === 'rating')     books.sort((a,b) => b.rating - a.rating);
+    return books;
+  }
+
+  function renderUsedBooksFiltered() {
+    const books   = filterUsedBooks();
+    const visible = books.slice(0, usedVisibleCount);
+    $('#used-results-count').text(books.length);
+    if (books.length === 0) {
+      $('#used-books-grid').empty();
+      $('#used-empty-state').removeClass('hidden');
+      $('#used-load-more-wrap').addClass('hidden');
+    } else {
+      $('#used-empty-state').addClass('hidden');
+      $('#used-books-grid').html(visible.map(b => buildUsedBookCard(b)).join(''));
+      $('#used-load-more-wrap').toggleClass('hidden', usedVisibleCount >= books.length);
     }
   }
 
-  // ── Price slider label ───────────────────────────────────
+  // Used books condition filter buttons
+  $(document).on('click', '.used-condition-filter', function () {
+    const condition = $(this).data('condition');
+    if (usedConditionFilter === condition) {
+      usedConditionFilter = null;
+      $(this).removeClass('ring-2 ring-offset-2 ring-amber-500');
+    } else {
+      $('.used-condition-filter').removeClass('ring-2 ring-offset-2 ring-amber-500');
+      usedConditionFilter = condition;
+      $(this).addClass('ring-2 ring-offset-2 ring-amber-500');
+    }
+    usedVisibleCount = USED_PAGE_SIZE;
+    renderUsedBooksFiltered();
+  });
+
+  // Used books sort buttons
+  $(document).on('click', '.used-sort-btn', function () {
+    $('.used-sort-btn').removeClass('active').addClass('text-gray-600');
+    $(this).addClass('active').removeClass('text-gray-600');
+    usedCurrentSort = $(this).data('sort');
+    usedVisibleCount = USED_PAGE_SIZE;
+    renderUsedBooksFiltered();
+  });
+
+  // Used books load more
+  $('#used-load-more').on('click', function () {
+    usedVisibleCount += USED_PAGE_SIZE;
+    renderUsedBooksFiltered();
+    $('html, body').animate({ scrollTop: $('#used-books-grid').offset().top - 100 }, 400);
+  });
+
+  // Used books reset filters
+  function resetUsedFilters() {
+    usedConditionFilter = null;
+    usedCurrentSort = 'default';
+    usedVisibleCount = USED_PAGE_SIZE;
+    $('.used-condition-filter').removeClass('ring-2 ring-offset-2 ring-amber-500');
+    $('.used-sort-btn').removeClass('active').addClass('text-gray-600');
+    $('.used-sort-btn[data-sort="default"]').addClass('active').removeClass('text-gray-600');
+    renderUsedBooksFiltered();
+  }
+
+  $('#used-reset-filters, #used-reset-filters-empty').on('click', resetUsedFilters);
+
+  function renderUsedBooks() {
+    renderUsedBooksFiltered();
+  }
+ 
   $('#price-range').on('input', function () {
-    $('#price-label').text('Up to $' + $(this).val());
+    $('#price-label').text('Up to R' + $(this).val());
     visibleCount = PAGE_SIZE;
     renderBooks();
   });
-
-  // ── Filter events ────────────────────────────────────────
-  $('input[name="category"], input[name="rating"], #filter-sale, #filter-new').on('change', function () {
+ 
+  $('input[name="category"], input[name="rating"], #filter-sale, #filter-new, #filter-bestsellers').on('change', function () {
     visibleCount = PAGE_SIZE;
     renderBooks();
   });
-
+ 
   $('#catalog-search').on('input', function () {
     visibleCount = PAGE_SIZE;
     renderBooks();
   });
-
-  // ── Sort ─────────────────────────────────────────────────
+ 
   $(document).on('click', '.sort-btn', function () {
     $('.sort-btn').removeClass('active').addClass('text-gray-600');
     $(this).addClass('active').removeClass('text-gray-600');
@@ -420,22 +595,21 @@ $(function () {
     visibleCount = PAGE_SIZE;
     renderBooks();
   });
-
-  // ── Load more ────────────────────────────────────────────
+ 
   $('#load-more').on('click', function () {
     visibleCount += PAGE_SIZE;
     renderBooks();
     $('html, body').animate({ scrollTop: $('#books-grid').offset().top - 100 }, 400);
   });
-
-  // ── Reset filters ────────────────────────────────────────
+ 
   function resetFilters() {
     $('input[name="category"][value="all"]').prop('checked', true);
     $('input[name="rating"][value="0"]').prop('checked', true);
-    $('#price-range').val(30);
-    $('#price-label').text('Up to $30');
+    $('#price-range').val(420);
+    $('#price-label').text('Up to R420');
     $('#filter-sale').prop('checked', false);
     $('#filter-new').prop('checked', false);
+    $('#filter-bestsellers').prop('checked', false);
     $('#catalog-search').val('');
     currentSort  = 'default';
     visibleCount = PAGE_SIZE;
@@ -443,19 +617,27 @@ $(function () {
     $('.sort-btn[data-sort="default"]').addClass('active').removeClass('text-gray-600');
     renderBooks();
   }
+ 
   $('#reset-filters, #reset-filters-empty').on('click', resetFilters);
-
-  // ── Resolve initial category from URL ───────────────────
+ 
+  usedVisibleCount = USED_PAGE_SIZE;
   visibleCount = PAGE_SIZE;
   renderBooks();
-
-  // ── Sort btn style ───────────────────────────────────────
+  renderUsedBooks();
+ 
   $(document).on('click', '.sort-btn', function () {
     $('.sort-btn').css({ background:'', color:'#4b5563', borderColor:'#e5e7eb' });
     $(this).css({ background:'#6366f1', color:'#fff', borderColor:'#6366f1' });
   });
-
+ 
+  // Scroll to used section if hash present
+  if (window.location.hash === '#used') {
+    setTimeout(() => {
+      const $el = $('#used');
+      if ($el.length) $('html,body').animate({ scrollTop: $el.offset().top - 80 }, 600);
+    }, 300);
+  }
 });
 </script>
 </body>
-</html>
+</html

@@ -14,18 +14,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/custom.css" />
   <script>
-    // Apply saved theme before paint to avoid flash
     (function(){
       if(localStorage.getItem('musaTheme')==='dark') document.documentElement.classList.add('dark');
     })();
   </script>
 </head>
 <body class="bg-gray-50 text-gray-800">
-
-<!-- ── Toast Container ─────────────────────────────────── -->
+ 
 <div id="toast-container" class="toast-container"></div>
-
-<!-- ── Search Overlay ──────────────────────────────────── -->
+ 
+<!-- Search Overlay -->
 <div id="search-overlay" class="search-overlay">
   <div class="w-full max-w-2xl px-4">
     <div class="flex items-center bg-white bg-opacity-10 border border-white border-opacity-20 rounded-2xl px-4 py-3 mb-6">
@@ -39,8 +37,8 @@
     <div id="search-results" class="space-y-1"></div>
   </div>
 </div>
-
-<!-- ── Book Modal ───────────────────────────────────────── -->
+ 
+<!-- Book Modal -->
 <div id="book-modal" class="modal-overlay">
   <div class="modal-box">
     <div class="flex justify-end p-4 pb-0">
@@ -51,23 +49,20 @@
     <div id="modal-body"></div>
   </div>
 </div>
-
+ 
 <!-- ── NAVBAR ───────────────────────────────────────────── -->
 <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
     <div class="flex items-center justify-between h-16">
-      <!-- Logo -->
       <a href="index.html" class="flex items-center gap-2 flex-shrink-0">
         <img src="logo.png" alt="Musa Bookstore" class="h-20 w-auto object-contain" />
       </a>
-      <!-- Desktop nav -->
       <div class="hidden md:flex items-center gap-7">
         <a href="index.html" class="nav-link active text-gray-700 hover:text-indigo-600 font-medium text-sm transition-colors">Home</a>
         <a href="books.html" class="nav-link text-gray-700 hover:text-indigo-600 font-medium text-sm transition-colors">Books</a>
-        <a href="books.html" class="nav-link text-gray-700 hover:text-indigo-600 font-medium text-sm transition-colors">Categories</a>
+        <a href="categories.html" class="nav-link text-gray-700 hover:text-indigo-600 font-medium text-sm transition-colors">Categories</a>
         <a href="#about" class="nav-link text-gray-700 hover:text-indigo-600 font-medium text-sm transition-colors">About</a>
       </div>
-      <!-- Right icons -->
       <div class="flex items-center gap-1">
         <button id="search-toggle" class="p-2.5 text-gray-500 hover:text-sky-600 hover:bg-sky-50 rounded-xl transition-all" title="Search">
           <i class="fas fa-search"></i>
@@ -85,12 +80,11 @@
       </div>
     </div>
   </div>
-  <!-- Mobile Menu -->
   <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-100">
     <div class="px-4 py-3 space-y-1">
       <a href="index.html" class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">Home</a>
       <a href="books.html" class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">Books</a>
-      <a href="books.html" class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">Categories</a>
+      <a href="categories.html" class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">Categories</a>
       <a href="#about" class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">About</a>
       <a href="cart.html" class="block px-3 py-2.5 text-indigo-600 font-semibold rounded-xl bg-indigo-50 transition-colors">
         <i class="fas fa-shopping-cart mr-2"></i>Cart
@@ -98,12 +92,11 @@
     </div>
   </div>
 </nav>
-
+ 
 <!-- ── HERO ─────────────────────────────────────────────── -->
 <section class="hero-bg pt-24 pb-16 md:pb-0 md:min-h-screen flex items-center">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full">
     <div class="flex flex-col md:flex-row items-center gap-12">
-      <!-- Left: Text -->
       <div class="flex-1 text-center md:text-left relative z-10">
         <span class="inline-block bg-indigo-500 bg-opacity-20 text-indigo-300 border border-indigo-400 border-opacity-30 text-xs font-semibold px-4 py-1.5 rounded-full mb-5 tracking-wide uppercase">
           ✦ Free shipping on orders over R500
@@ -114,35 +107,31 @@
           Book Today
         </h1>
         <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-8 max-w-lg mx-auto md:mx-0">
-          Explore over 50,000 titles across every genre. From timeless classics to new releases — your next great read is waiting.
+          Explore over 50,000 titles across every genre — new and pre-owned. From timeless classics to new releases, your next great read is waiting.
         </p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-          <a href="books.html" class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-7 py-3.5 rounded-2xl transition-all shadow-lg shadow-indigo-900/40 hover:shadow-indigo-500/40 hover:-translate-y-0.5">
+          <a href="books.html" class="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-500 text-white font-semibold px-7 py-3.5 rounded-2xl transition-all shadow-lg shadow-amber-900/40 hover:shadow-amber-500/40 hover:-translate-y-0.5">
             <i class="fas fa-book-open"></i> Browse Books
           </a>
-          <a href="books.html?category=Bestsellers" class="inline-flex items-center gap-2 bg-white bg-opacity-10 hover:bg-opacity-20 text-white font-semibold px-7 py-3.5 rounded-2xl transition-all border border-white border-opacity-20">
+          <a href="books.html?bestsellers=true" class="inline-flex items-center gap-2 bg-white bg-opacity-10 hover:bg-opacity-20 text-white font-semibold px-7 py-3.5 rounded-2xl transition-all border border-white border-opacity-20">
             <i class="fas fa-fire text-amber-400"></i> Best Sellers
           </a>
         </div>
-        <!-- Trust badges -->
         <div class="flex items-center gap-5 mt-8 justify-center md:justify-start text-gray-400 text-sm flex-wrap">
           <span class="flex items-center gap-1.5"><i class="fas fa-shield-alt text-green-400"></i> Secure Payments</span>
           <span class="flex items-center gap-1.5"><i class="fas fa-truck text-blue-400"></i> Free Delivery over R500</span>
           <span class="flex items-center gap-1.5"><i class="fas fa-undo text-amber-400"></i> 30-Day Returns</span>
         </div>
       </div>
-      <!-- Right: Floating Books -->
       <div class="flex-1 flex justify-center items-center relative py-12 md:py-0" style="min-height:340px;">
-        <!-- Central large book -->
         <div class="float-1 relative z-20" style="--rot:-5deg;">
           <div class="cover-fiction w-44 h-60 md:w-52 md:h-72 rounded-lg shadow-2xl flex flex-col items-center justify-center text-white text-center p-4" style="border-radius:6px 14px 14px 6px; box-shadow: -8px 0 20px rgba(0,0,0,0.4), 8px 0 30px rgba(0,0,0,0.3);">
             <span class="text-6xl mb-3">✨</span>
             <p class="font-serif font-bold text-sm leading-tight">The Great Gatsby</p>
             <p class="text-xs opacity-70 mt-1">F. Scott Fitzgerald</p>
-            <div class="mt-2 flex gap-0.5">${'★'.repeat(5)}</div>
+            <div class="mt-2 flex gap-0.5">★★★★★</div>
           </div>
         </div>
-        <!-- Side book left -->
         <div class="float-2 absolute z-10" style="left:0; top:50%; transform:translateY(-60%) rotate(-15deg); --rot:-15deg;">
           <div class="cover-scifi w-28 h-40 rounded-lg shadow-xl flex flex-col items-center justify-center text-white text-center p-2" style="border-radius:4px 10px 10px 4px; opacity:0.85;">
             <span class="text-3xl mb-1">🚀</span>
@@ -150,7 +139,6 @@
             <p class="text-xs opacity-60">Frank Herbert</p>
           </div>
         </div>
-        <!-- Side book right -->
         <div class="float-3 absolute z-10" style="right:0; top:50%; transform:translateY(-40%) rotate(12deg); --rot:12deg;">
           <div class="cover-nonfiction w-28 h-40 rounded-lg shadow-xl flex flex-col items-center justify-center text-white text-center p-2" style="border-radius:4px 10px 10px 4px; opacity:0.85;">
             <span class="text-3xl mb-1">⚡</span>
@@ -158,17 +146,15 @@
             <p class="text-xs opacity-60">James Clear</p>
           </div>
         </div>
-        <!-- Small book top -->
         <div class="float-1 absolute" style="top:0; right:25%; --rot:8deg;">
           <div class="cover-romance w-20 h-28 rounded-lg shadow-lg flex items-center justify-center text-white text-2xl" style="border-radius:3px 8px 8px 3px; opacity:0.7;">❤️</div>
         </div>
-        <!-- Glow orb -->
         <div class="absolute w-64 h-64 rounded-full" style="background: radial-gradient(circle, rgba(14,165,233,0.25) 0%, transparent 70%); pointer-events:none; top:50%; left:50%; transform:translate(-50%,-50%);"></div>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <!-- ── STATS BAR ─────────────────────────────────────────── -->
 <section class="bg-white py-10 shadow-md relative z-10 dark:bg-slate-800">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
@@ -192,7 +178,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- ── CATEGORIES ────────────────────────────────────────── -->
 <section class="py-16 md:py-20 bg-gray-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
@@ -201,49 +187,41 @@
       <p class="text-gray-500 text-base max-w-xl mx-auto">Find your perfect read from our wide selection of genres</p>
     </div>
     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
-      <!-- Fiction -->
       <a href="books.html?category=Fiction" class="category-card bg-white rounded-2xl p-5 flex flex-col items-center text-center shadow-sm hover:shadow-lg border border-gray-100 transition-all">
         <div class="w-14 h-14 cover-fiction rounded-2xl flex items-center justify-center text-2xl mb-3 shadow-md">📚</div>
         <h3 class="font-serif font-semibold text-gray-900 text-sm">Fiction</h3>
         <p class="text-gray-400 text-xs mt-0.5">320 books</p>
       </a>
-      <!-- Science Fiction -->
       <a href="books.html?category=Science+Fiction" class="category-card bg-white rounded-2xl p-5 flex flex-col items-center text-center shadow-sm hover:shadow-lg border border-gray-100 transition-all">
         <div class="w-14 h-14 cover-scifi rounded-2xl flex items-center justify-center text-2xl mb-3 shadow-md">🚀</div>
         <h3 class="font-serif font-semibold text-gray-900 text-sm">Science Fiction</h3>
         <p class="text-gray-400 text-xs mt-0.5">215 books</p>
       </a>
-      <!-- Mystery -->
       <a href="books.html?category=Mystery" class="category-card bg-white rounded-2xl p-5 flex flex-col items-center text-center shadow-sm hover:shadow-lg border border-gray-100 transition-all">
         <div class="w-14 h-14 cover-mystery rounded-2xl flex items-center justify-center text-2xl mb-3 shadow-md">🔍</div>
         <h3 class="font-serif font-semibold text-gray-900 text-sm">Mystery</h3>
         <p class="text-gray-400 text-xs mt-0.5">178 books</p>
       </a>
-      <!-- Non-Fiction -->
       <a href="books.html?category=Non-Fiction" class="category-card bg-white rounded-2xl p-5 flex flex-col items-center text-center shadow-sm hover:shadow-lg border border-gray-100 transition-all">
         <div class="w-14 h-14 cover-nonfiction rounded-2xl flex items-center justify-center text-2xl mb-3 shadow-md">🌍</div>
         <h3 class="font-serif font-semibold text-gray-900 text-sm">Non-Fiction</h3>
         <p class="text-gray-400 text-xs mt-0.5">290 books</p>
       </a>
-      <!-- Biography -->
       <a href="books.html?category=Biography" class="category-card bg-white rounded-2xl p-5 flex flex-col items-center text-center shadow-sm hover:shadow-lg border border-gray-100 transition-all">
         <div class="w-14 h-14 cover-biography rounded-2xl flex items-center justify-center text-2xl mb-3 shadow-md">👤</div>
         <h3 class="font-serif font-semibold text-gray-900 text-sm">Biography</h3>
         <p class="text-gray-400 text-xs mt-0.5">145 books</p>
       </a>
-      <!-- Self-Help -->
       <a href="books.html?category=Self-Help" class="category-card bg-white rounded-2xl p-5 flex flex-col items-center text-center shadow-sm hover:shadow-lg border border-gray-100 transition-all">
         <div class="w-14 h-14 cover-selfhelp rounded-2xl flex items-center justify-center text-2xl mb-3 shadow-md">⚡</div>
         <h3 class="font-serif font-semibold text-gray-900 text-sm">Self-Help</h3>
         <p class="text-gray-400 text-xs mt-0.5">203 books</p>
       </a>
-      <!-- History -->
       <a href="books.html?category=History" class="category-card bg-white rounded-2xl p-5 flex flex-col items-center text-center shadow-sm hover:shadow-lg border border-gray-100 transition-all">
         <div class="w-14 h-14 cover-history rounded-2xl flex items-center justify-center text-2xl mb-3 shadow-md">🏛️</div>
         <h3 class="font-serif font-semibold text-gray-900 text-sm">History</h3>
         <p class="text-gray-400 text-xs mt-0.5">167 books</p>
       </a>
-      <!-- Romance -->
       <a href="books.html?category=Romance" class="category-card bg-white rounded-2xl p-5 flex flex-col items-center text-center shadow-sm hover:shadow-lg border border-gray-100 transition-all">
         <div class="w-14 h-14 cover-romance rounded-2xl flex items-center justify-center text-2xl mb-3 shadow-md">❤️</div>
         <h3 class="font-serif font-semibold text-gray-900 text-sm">Romance</h3>
@@ -252,7 +230,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- ── FEATURED BOOKS ─────────────────────────────────────── -->
 <section class="py-16 md:py-20 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
@@ -276,7 +254,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- ── SPECIAL OFFER BANNER ──────────────────────────────── -->
 <section class="offer-bg py-14">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
@@ -292,7 +270,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- ── WHY CHOOSE US ─────────────────────────────────────── -->
 <section id="about" class="py-16 md:py-20 bg-gray-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
@@ -304,7 +282,7 @@
       <div class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow border border-gray-100">
         <div class="feature-icon bg-indigo-50 mx-auto"><i class="fas fa-truck text-indigo-600 text-2xl"></i></div>
         <h3 class="font-serif font-bold text-gray-900 text-lg mb-2">Free Shipping</h3>
-        <p class="text-gray-500 text-sm">Free delivery on all orders over $30. Fast dispatch from our warehouse.</p>
+        <p class="text-gray-500 text-sm">Free delivery on all orders over R500. Fast dispatch from our warehouse.</p>
       </div>
       <div class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow border border-gray-100">
         <div class="feature-icon bg-green-50 mx-auto"><i class="fas fa-shield-alt text-green-600 text-2xl"></i></div>
@@ -324,7 +302,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- ── NEW ARRIVALS ──────────────────────────────────────── -->
 <section class="py-16 md:py-20 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
@@ -340,7 +318,62 @@
     <div id="new-arrivals-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5"></div>
   </div>
 </section>
-
+ 
+<!-- ── USED BOOKS ─────────────────────────────────────────── -->
+<section class="py-16 md:py-20 used-books-bg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <!-- Section Header -->
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-4">
+      <div>
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center shadow-md">
+            <i class="fas fa-recycle text-white"></i>
+          </div>
+          <span class="text-xs font-bold text-amber-700 bg-amber-100 px-3 py-1 rounded-full uppercase tracking-wide border border-amber-200">Pre-Owned Collection</span>
+        </div>
+        <h2 class="section-title-used font-serif font-bold text-3xl md:text-4xl text-gray-900 mb-2">Used Books</h2>
+        <p class="text-gray-500 text-sm mt-4 max-w-lg">Same great stories, friendlier prices. Every pre-owned book is inspected and graded so you know exactly what you're getting.</p>
+      </div>
+      <a href="books.html#used" class="flex-shrink-0 text-amber-700 font-semibold text-sm hover:underline flex items-center gap-1">
+        Browse all used <i class="fas fa-arrow-right text-xs"></i>
+      </a>
+    </div>
+ 
+    <!-- Condition legend -->
+    <div class="flex items-center gap-4 mb-8 flex-wrap">
+      <span class="text-xs text-gray-500 font-semibold uppercase tracking-wide">Condition guide:</span>
+      <span class="flex items-center gap-1.5 text-xs font-semibold text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">
+        <span class="w-2 h-2 bg-emerald-500 rounded-full"></span> Like New
+      </span>
+      <span class="flex items-center gap-1.5 text-xs font-semibold text-sky-700 bg-sky-100 px-3 py-1 rounded-full">
+        <span class="w-2 h-2 bg-sky-500 rounded-full"></span> Very Good
+      </span>
+      <span class="flex items-center gap-1.5 text-xs font-semibold text-amber-700 bg-amber-100 px-3 py-1 rounded-full">
+        <span class="w-2 h-2 bg-amber-500 rounded-full"></span> Good
+      </span>
+    </div>
+ 
+    <!-- Used books grid -->
+    <div id="used-books-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4"></div>
+ 
+    <!-- CTA banner -->
+    <div class="mt-10 bg-amber-50 border border-amber-200 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 bg-amber-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow">
+          <i class="fas fa-leaf text-white text-lg"></i>
+        </div>
+        <div>
+          <h3 class="font-serif font-bold text-gray-900 text-lg">Sell Your Books</h3>
+          <p class="text-gray-500 text-sm">Got books collecting dust? Sell them to us and earn store credit.</p>
+        </div>
+      </div>
+      <a href="mailto:hello@musabooks.com?subject=I want to sell my books" class="flex-shrink-0 inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-bold px-6 py-3 rounded-2xl transition-all shadow text-sm">
+        <i class="fas fa-paper-plane"></i> Get in Touch
+      </a>
+    </div>
+  </div>
+</section>
+ 
 <!-- ── NEWSLETTER ────────────────────────────────────────── -->
 <section class="newsletter-bg py-16">
   <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
@@ -357,12 +390,11 @@
     <p class="text-indigo-300 text-xs mt-4">No spam, ever. Unsubscribe at any time.</p>
   </div>
 </section>
-
+ 
 <!-- ── FOOTER ────────────────────────────────────────────── -->
 <footer class="bg-gray-900 text-gray-300 pt-14 pb-8">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
-      <!-- Brand -->
       <div class="sm:col-span-2 lg:col-span-1">
         <div class="flex items-center gap-2 mb-4">
           <div class="w-9 h-9 bg-indigo-600 rounded-xl flex items-center justify-center">
@@ -378,18 +410,15 @@
           <a href="#" class="w-9 h-9 bg-gray-800 hover:bg-red-600 rounded-xl flex items-center justify-center transition-all text-sm"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
-      <!-- Quick Links -->
       <div>
         <h4 class="font-serif font-semibold text-white mb-4">Quick Links</h4>
         <ul class="space-y-2.5 text-sm">
           <li><a href="index.html" class="hover:text-indigo-400 transition-colors">Home</a></li>
           <li><a href="books.html" class="hover:text-indigo-400 transition-colors">Browse Books</a></li>
+          <li><a href="books.html#used" class="hover:text-amber-400 transition-colors"><i class="fas fa-recycle text-xs mr-1"></i>Used Books</a></li>
           <li><a href="cart.html" class="hover:text-indigo-400 transition-colors">Shopping Cart</a></li>
-          <li><a href="#" class="hover:text-indigo-400 transition-colors">Best Sellers</a></li>
-          <li><a href="#" class="hover:text-indigo-400 transition-colors">New Arrivals</a></li>
         </ul>
       </div>
-      <!-- Categories -->
       <div>
         <h4 class="font-serif font-semibold text-white mb-4">Categories</h4>
         <ul class="space-y-2.5 text-sm">
@@ -400,7 +429,6 @@
           <li><a href="books.html?category=Self-Help" class="hover:text-indigo-400 transition-colors">Self-Help</a></li>
         </ul>
       </div>
-      <!-- Contact -->
       <div>
         <h4 class="font-serif font-semibold text-white mb-4">Contact Us</h4>
         <ul class="space-y-3 text-sm">
@@ -410,7 +438,7 @@
           </li>
           <li class="flex items-center gap-2">
             <i class="fas fa-phone text-indigo-400 text-xs w-4"></i>
-            <a href="tel:+15551234567" class="hover:text-indigo-400 transition-colors">+27 55 123 4567 </a>
+            <a href="tel:+27551234567" class="hover:text-indigo-400 transition-colors">+27 55 123 4567</a>
           </li>
           <li class="flex items-center gap-2">
             <i class="fas fa-envelope text-indigo-400 text-xs w-4"></i>
@@ -423,7 +451,6 @@
         </ul>
       </div>
     </div>
-    <!-- Bottom bar -->
     <div class="border-t border-gray-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-500">
       <p>&copy; 2026 Musa Bookstore. All rights reserved.</p>
       <div class="flex gap-4">
@@ -434,43 +461,42 @@
     </div>
   </div>
 </footer>
-
-<!-- ── Scroll to top ─────────────────────────────────────── -->
+ 
 <button id="scroll-top" class="w-11 h-11 bg-sky-600 hover:bg-sky-700 text-white rounded-2xl flex items-center justify-center shadow-lg transition-all">
   <i class="fas fa-arrow-up text-sm"></i>
 </button>
-
-<!-- ── Scripts ───────────────────────────────────────────── -->
+ 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="js/app.js"></script>
 <script>
 $(function () {
-
-  // ── Render Featured Books ────────────────────────────────
+ 
   function renderFeatured(filter) {
     let books = BOOKS_DATA.filter(b => b.featured);
     if (filter && filter !== 'all') books = books.filter(b => b.category === filter);
     const html = books.map(b => buildBookCard(b)).join('');
     $('#featured-grid').html(html || '<p class="col-span-4 text-center text-gray-400 py-10">No books found in this category.</p>');
   }
-
-  // ── Render New Arrivals ──────────────────────────────────
+ 
   function renderNewArrivals() {
     const books = BOOKS_DATA.filter(b => b.newArrival);
     $('#new-arrivals-grid').html(books.map(b => buildBookCard(b)).join(''));
   }
-
+ 
+  function renderUsedBooks() {
+    $('#used-books-grid').html(USED_BOOKS_DATA.map(b => buildUsedBookCard(b)).join(''));
+  }
+ 
   renderFeatured('all');
   renderNewArrivals();
-
-  // ── Tab filter ───────────────────────────────────────────
+  renderUsedBooks();
+ 
   $(document).on('click', '.tab-btn', function () {
     $('.tab-btn').removeClass('active').addClass('text-gray-600');
     $(this).addClass('active').removeClass('text-gray-600');
     renderFeatured($(this).data('tab'));
   });
-
-  // ── Newsletter ───────────────────────────────────────────
+ 
   $('#newsletter-form').on('submit', function (e) {
     e.preventDefault();
     const email = $('#newsletter-email').val().trim();
@@ -481,7 +507,7 @@ $(function () {
     showToast('You\'re subscribed! Welcome to Musa Books 📚', 'success', 4000);
     $('#newsletter-email').val('');
   });
-
+ 
 });
 </script>
 </body>
