@@ -121,39 +121,18 @@
         </div>
       </div>
       <div class="flex-1 flex justify-center items-center relative py-12 md:py-0" style="min-height:340px;">
-        <div class="float-1 relative z-20" style="--rot:-5deg;">
-          <div class="cover-fiction w-44 h-60 md:w-52 md:h-72 rounded-lg shadow-2xl flex flex-col items-center justify-center text-white text-center p-4" style="border-radius:6px 14px 14px 6px; box-shadow: -8px 0 20px rgba(0,0,0,0.4), 8px 0 30px rgba(0,0,0,0.3);">
-            <span class="text-6xl mb-3">✨</span>
-            <p class="font-serif font-bold text-sm leading-tight">The Great Gatsby</p>
-            <p class="text-xs opacity-70 mt-1">F. Scott Fitzgerald</p>
-            <div class="mt-2 flex gap-0.5">★★★★★</div>
-          </div>
+        <!-- Elegant typography-focused alternative instead of floating books -->
+        <div class="text-center opacity-60">
+          <p class="font-serif text-5xl text-amber-700 mb-4">✦</p>
+          <p class="font-serif text-sm italic text-amber-600 tracking-widest">{{ Collections curated with intention }}</p>
         </div>
-        <div class="float-2 absolute z-10" style="left:0; top:50%; transform:translateY(-60%) rotate(-15deg); --rot:-15deg;">
-          <div class="cover-scifi w-28 h-40 rounded-lg shadow-xl flex flex-col items-center justify-center text-white text-center p-2" style="border-radius:4px 10px 10px 4px; opacity:0.85;">
-            <span class="text-3xl mb-1">🚀</span>
-            <p class="font-serif font-bold text-xs leading-tight">Dune</p>
-            <p class="text-xs opacity-60">Frank Herbert</p>
-          </div>
-        </div>
-        <div class="float-3 absolute z-10" style="right:0; top:50%; transform:translateY(-40%) rotate(12deg); --rot:12deg;">
-          <div class="cover-nonfiction w-28 h-40 rounded-lg shadow-xl flex flex-col items-center justify-center text-white text-center p-2" style="border-radius:4px 10px 10px 4px; opacity:0.85;">
-            <span class="text-3xl mb-1">⚡</span>
-            <p class="font-serif font-bold text-xs leading-tight">Atomic Habits</p>
-            <p class="text-xs opacity-60">James Clear</p>
-          </div>
-        </div>
-        <div class="float-1 absolute" style="top:0; right:25%; --rot:8deg;">
-          <div class="cover-romance w-20 h-28 rounded-lg shadow-lg flex items-center justify-center text-white text-2xl" style="border-radius:3px 8px 8px 3px; opacity:0.7;">❤️</div>
-        </div>
-        <div class="absolute w-64 h-64 rounded-full" style="background: radial-gradient(circle, rgba(14,165,233,0.25) 0%, transparent 70%); pointer-events:none; top:50%; left:50%; transform:translate(-50%,-50%);"></div>
       </div>
     </div>
   </div>
 </section>
  
 <!-- ── STATS BAR ─────────────────────────────────────────── -->
-<section class="bg-white py-10 shadow-md relative z-10 dark:bg-slate-800">
+<section class="bg-gray-900 py-10 shadow-md relative z-10 dark:bg-gray-900">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
       <div class="p-4">
@@ -177,63 +156,63 @@
 </section>
  
 <!-- ── CATEGORIES ────────────────────────────────────────── -->
-<section class="py-16 md:py-20 bg-gray-50">
+<section class="py-16 md:py-20 bg-gray-900">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
     <div class="text-center mb-12">
-      <h2 class="font-serif font-bold text-3xl md:text-4xl text-gray-900 mb-3">Browse by Genre</h2>
+      <h2 class="font-serif font-bold text-3xl md:text-4xl text-gray-100 mb-3">Browse by Genre</h2>
       <p class="text-gray-500 text-base max-w-xl mx-auto">Every shelf tells a story. Find your next read.</p>
     </div>
     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
-      <a href="books.html?category=Fiction" class="category-card bg-white rounded-2xl p-5 flex flex-col items-center text-center shadow-sm hover:shadow-lg border border-gray-100 transition-all">
+      <a href="books.html?category=Fiction" class="category-card bg-gray-900 rounded-2xl p-5 flex flex-col items-center text-center shadow-sm hover:shadow-lg border border-gray-800 transition-all">
         <div class="w-14 h-14 cover-fiction rounded-2xl flex items-center justify-center text-2xl mb-3 shadow-md">📚</div>
-        <h3 class="font-serif font-semibold text-gray-900 text-sm">Fiction</h3>
-        <p class="text-gray-400 text-xs mt-0.5">320 books</p>
+        <h3 class="font-serif font-semibold text-gray-200 text-sm">Fiction</h3>
+        <p class="text-gray-500 text-xs mt-0.5">320 books</p>
       </a>
-      <a href="books.html?category=Science+Fiction" class="category-card bg-white rounded-2xl p-5 flex flex-col items-center text-center shadow-sm hover:shadow-lg border border-gray-100 transition-all">
+      <a href="books.html?category=Science+Fiction" class="category-card bg-gray-900 rounded-2xl p-5 flex flex-col items-center text-center shadow-sm hover:shadow-lg border border-gray-800 transition-all">
         <div class="w-14 h-14 cover-scifi rounded-2xl flex items-center justify-center text-2xl mb-3 shadow-md">🚀</div>
-        <h3 class="font-serif font-semibold text-gray-900 text-sm">Science Fiction</h3>
-        <p class="text-gray-400 text-xs mt-0.5">215 books</p>
+        <h3 class="font-serif font-semibold text-gray-200 text-sm">Science Fiction</h3>
+        <p class="text-gray-500 text-xs mt-0.5">215 books</p>
       </a>
-      <a href="books.html?category=Mystery" class="category-card bg-white rounded-2xl p-5 flex flex-col items-center text-center shadow-sm hover:shadow-lg border border-gray-100 transition-all">
+      <a href="books.html?category=Mystery" class="category-card bg-gray-900 rounded-2xl p-5 flex flex-col items-center text-center shadow-sm hover:shadow-lg border border-gray-800 transition-all">
         <div class="w-14 h-14 cover-mystery rounded-2xl flex items-center justify-center text-2xl mb-3 shadow-md">🔍</div>
-        <h3 class="font-serif font-semibold text-gray-900 text-sm">Mystery</h3>
-        <p class="text-gray-400 text-xs mt-0.5">178 books</p>
+        <h3 class="font-serif font-semibold text-gray-200 text-sm">Mystery</h3>
+        <p class="text-gray-500 text-xs mt-0.5">178 books</p>
       </a>
-      <a href="books.html?category=Non-Fiction" class="category-card bg-white rounded-2xl p-5 flex flex-col items-center text-center shadow-sm hover:shadow-lg border border-gray-100 transition-all">
+      <a href="books.html?category=Non-Fiction" class="category-card bg-gray-900 rounded-2xl p-5 flex flex-col items-center text-center shadow-sm hover:shadow-lg border border-gray-800 transition-all">
         <div class="w-14 h-14 cover-nonfiction rounded-2xl flex items-center justify-center text-2xl mb-3 shadow-md">🌍</div>
-        <h3 class="font-serif font-semibold text-gray-900 text-sm">Non-Fiction</h3>
-        <p class="text-gray-400 text-xs mt-0.5">290 books</p>
+        <h3 class="font-serif font-semibold text-gray-200 text-sm">Non-Fiction</h3>
+        <p class="text-gray-500 text-xs mt-0.5">290 books</p>
       </a>
-      <a href="books.html?category=Biography" class="category-card bg-white rounded-2xl p-5 flex flex-col items-center text-center shadow-sm hover:shadow-lg border border-gray-100 transition-all">
+      <a href="books.html?category=Biography" class="category-card bg-gray-900 rounded-2xl p-5 flex flex-col items-center text-center shadow-sm hover:shadow-lg border border-gray-800 transition-all">
         <div class="w-14 h-14 cover-biography rounded-2xl flex items-center justify-center text-2xl mb-3 shadow-md">👤</div>
-        <h3 class="font-serif font-semibold text-gray-900 text-sm">Biography</h3>
-        <p class="text-gray-400 text-xs mt-0.5">145 books</p>
+        <h3 class="font-serif font-semibold text-gray-200 text-sm">Biography</h3>
+        <p class="text-gray-500 text-xs mt-0.5">145 books</p>
       </a>
-      <a href="books.html?category=Self-Help" class="category-card bg-white rounded-2xl p-5 flex flex-col items-center text-center shadow-sm hover:shadow-lg border border-gray-100 transition-all">
+      <a href="books.html?category=Self-Help" class="category-card bg-gray-900 rounded-2xl p-5 flex flex-col items-center text-center shadow-sm hover:shadow-lg border border-gray-800 transition-all">
         <div class="w-14 h-14 cover-selfhelp rounded-2xl flex items-center justify-center text-2xl mb-3 shadow-md">⚡</div>
-        <h3 class="font-serif font-semibold text-gray-900 text-sm">Self-Help</h3>
-        <p class="text-gray-400 text-xs mt-0.5">203 books</p>
+        <h3 class="font-serif font-semibold text-gray-200 text-sm">Self-Help</h3>
+        <p class="text-gray-500 text-xs mt-0.5">203 books</p>
       </a>
-      <a href="books.html?category=History" class="category-card bg-white rounded-2xl p-5 flex flex-col items-center text-center shadow-sm hover:shadow-lg border border-gray-100 transition-all">
+      <a href="books.html?category=History" class="category-card bg-gray-900 rounded-2xl p-5 flex flex-col items-center text-center shadow-sm hover:shadow-lg border border-gray-800 transition-all">
         <div class="w-14 h-14 cover-history rounded-2xl flex items-center justify-center text-2xl mb-3 shadow-md">🏛️</div>
-        <h3 class="font-serif font-semibold text-gray-900 text-sm">History</h3>
-        <p class="text-gray-400 text-xs mt-0.5">167 books</p>
+        <h3 class="font-serif font-semibold text-gray-200 text-sm">History</h3>
+        <p class="text-gray-500 text-xs mt-0.5">167 books</p>
       </a>
-      <a href="books.html?category=Romance" class="category-card bg-white rounded-2xl p-5 flex flex-col items-center text-center shadow-sm hover:shadow-lg border border-gray-100 transition-all">
+      <a href="books.html?category=Romance" class="category-card bg-gray-900 rounded-2xl p-5 flex flex-col items-center text-center shadow-sm hover:shadow-lg border border-gray-800 transition-all">
         <div class="w-14 h-14 cover-romance rounded-2xl flex items-center justify-center text-2xl mb-3 shadow-md">❤️</div>
-        <h3 class="font-serif font-semibold text-gray-900 text-sm">Romance</h3>
-        <p class="text-gray-400 text-xs mt-0.5">258 books</p>
+        <h3 class="font-serif font-semibold text-gray-200 text-sm">Romance</h3>
+        <p class="text-gray-500 text-xs mt-0.5">258 books</p>
       </a>
     </div>
   </div>
 </section>
  
 <!-- ── FEATURED BOOKS ─────────────────────────────────────── -->
-<section class="py-16 md:py-20 bg-white">
+<section class="py-16 md:py-20 bg-gray-800">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
     <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
       <div>
-        <h2 class="section-title font-serif font-bold text-3xl md:text-4xl text-gray-900 mb-2">Editor's Selection</h2>
+        <h2 class="section-title font-serif font-bold text-3xl md:text-4xl text-gray-100 mb-2">Editor's Selection</h2>
         <p class="text-gray-500 text-sm mt-4">Titles we believe deserve your attention across all genres</p>
       </div>
       <div class="flex gap-2 flex-wrap">
@@ -268,31 +247,31 @@
 </section>
  
 <!-- ── WHY CHOOSE US ─────────────────────────────────────── -->
-<section id="about" class="py-16 md:py-20 bg-gray-50">
+<section id="about" class="py-16 md:py-20 bg-gray-900">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
     <div class="text-center mb-12">
-      <h2 class="font-serif font-bold text-3xl md:text-4xl text-gray-900 mb-3">Our Approach</h2>
+      <h2 class="font-serif font-bold text-3xl md:text-4xl text-gray-100 mb-3">Our Approach</h2>
       <p class="text-gray-500 max-w-lg mx-auto text-sm">Built on a passion for literature and a commitment to thoughtful curation</p>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-        <div class="feature-icon bg-amber-50 mx-auto"><i class="fas fa-feather text-amber-600 text-2xl"></i></div>
-        <h3 class="font-serif font-bold text-gray-900 text-lg mb-2">Curated Selection</h3>
+      <div class="bg-gray-900 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow border border-gray-800">
+        <div class="feature-icon bg-amber-500 bg-opacity-10 mx-auto"><i class="fas fa-feather text-amber-600 text-2xl"></i></div>
+        <h3 class="font-serif font-bold text-gray-200 text-lg mb-2">Curated Selection</h3>
         <p class="text-gray-500 text-sm">Every title is selected for literary merit and reader value. We stand behind every recommendation.</p>
       </div>
-      <div class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-        <div class="feature-icon bg-blue-50 mx-auto"><i class="fas fa-leaf text-blue-600 text-2xl"></i></div>
-        <h3 class="font-serif font-bold text-gray-900 text-lg mb-2">Pre-Owned Editions</h3>
+      <div class="bg-gray-900 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow border border-gray-800">
+        <div class="feature-icon bg-blue-500 bg-opacity-10 mx-auto"><i class="fas fa-leaf text-blue-600 text-2xl"></i></div>
+        <h3 class="font-serif font-bold text-gray-200 text-lg mb-2">Pre-Owned Editions</h3>
         <p class="text-gray-500 text-sm">Extend the life of great books. Hand-inspected used copies at responsible prices.</p>
       </div>
-      <div class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-        <div class="feature-icon bg-emerald-50 mx-auto"><i class="fas fa-book text-emerald-600 text-2xl"></i></div>
-        <h3 class="font-serif font-bold text-gray-900 text-lg mb-2">Reader First</h3>
+      <div class="bg-gray-900 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow border border-gray-800">
+        <div class="feature-icon bg-emerald-500 bg-opacity-10 mx-auto"><i class="fas fa-book text-emerald-600 text-2xl"></i></div>
+        <h3 class="font-serif font-bold text-gray-200 text-lg mb-2">Reader First</h3>
         <p class="text-gray-500 text-sm">Hassle-free returns and genuine support from fellow book lovers who understand what you want.</p>
       </div>
-      <div class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-        <div class="feature-icon bg-rose-50 mx-auto"><i class="fas fa-hands-holding-heart text-rose-600 text-2xl"></i></div>
-        <h3 class="font-serif font-bold text-gray-900 text-lg mb-2">Community Driven</h3>
+      <div class="bg-gray-900 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow border border-gray-800">
+        <div class="feature-icon bg-rose-500 bg-opacity-10 mx-auto"><i class="fas fa-hands-holding-heart text-rose-600 text-2xl"></i></div>
+        <h3 class="font-serif font-bold text-gray-200 text-lg mb-2">Community Driven</h3>
         <p class="text-gray-500 text-sm">Part of a reading community that values thoughtful recommendations and meaningful stories.</p>
       </div>
     </div>
@@ -300,11 +279,11 @@
 </section>
  
 <!-- ── NEW ARRIVALS ──────────────────────────────────────── -->
-<section class="py-16 md:py-20 bg-white">
+<section class="py-16 md:py-20 bg-gray-800">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
     <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
       <div>
-        <h2 class="section-title font-serif font-bold text-3xl md:text-4xl text-gray-900 mb-2">Recent Acquisitions</h2>
+        <h2 class="section-title font-serif font-bold text-3xl md:text-4xl text-gray-100 mb-2">Recent Acquisitions</h2>
         <p class="text-gray-500 text-sm mt-4">The newest titles in our collection, all carefully vetted</p>
       </div>
       <a href="books.html" class="text-indigo-600 font-semibold text-sm hover:underline flex items-center gap-1">
