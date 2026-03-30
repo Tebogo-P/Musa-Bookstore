@@ -2,14 +2,37 @@
 
 * { box-sizing: border-box; }
 
-body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; transition: background 0.3s ease, color 0.3s ease; }
+body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; transition: background 0.3s ease, color 0.3s ease; background: #0a0a0a; color: #e8e8e8; }
 h1, h2, h3, h4, h5 { font-family: 'Playfair Display', serif; }
 
 /* ═══════════════════════════════════════════════════════
    LUXURY GOLD & BLACK THEME: Gold (#f59e0b) + Black (#111827)
-   Light mode: cream backgrounds, gold accents
+   Light mode: dark surfaces with gold accents
    Dark mode:  charcoal backgrounds, gold accents
 ═══════════════════════════════════════════════════════ */
+
+/* ─── LIGHT MODE DARK SURFACES ─────────────────────────────── */
+/* Light mode now uses dark backgrounds for premium aesthetic */
+
+.bg-white { background-color: #1a1a1a !important; }
+.bg-gray-50 { background-color: #0a0a0a !important; }
+.bg-gray-100 { background-color: #1a1a1a !important; }
+
+.text-gray-900 { color: #f3e8d8 !important; }
+.text-gray-800 { color: #e8e8e8 !important; }
+.text-gray-700 { color: #d4c4b8 !important; }
+.text-gray-600 { color: #a0957a !important; }
+.text-gray-500 { color: #6b6460 !important; }
+.text-gray-400 { color: #5a5550 !important; }
+
+.border-gray-100 { border-color: #2a2a2a !important; }
+.border-gray-200 { border-color: #3a3a3a !important; }
+.border-gray-800 { border-color: #2a2a2a !important; }
+
+.bg-gray-900 { background-color: #050505 !important; }
+.bg-gray-800 { background-color: #0a0a0a !important; }
+
+footer, .bg-gray-900 { background-color: #050505 !important; }
 
 /* ─── Dark Mode Base ─────────────────────────────────── */
 html.dark body { background: #0f0f0f; color: #f3e8d8; }
@@ -111,12 +134,12 @@ html.dark .toast-info { background: #1a1a1a; color: #f3e8d8; }
 html.dark #coupon-tag { background: #78350f; border-color: #92400e; }
 html.dark #coupon-tag-text { color: #fcd34d; }
 
-/* Hero — light mode text (dark on light background) */
+/* Hero — light mode text (light on dark background) */
 .hero-bg h1,
-.hero-bg .text-white         { color: #111827 !important; }
-.hero-bg .text-gray-300      { color: #78350f !important; }
-.hero-bg .text-gray-400      { color: #92400e !important; }
-.hero-bg .text-indigo-300    { color: #d97706 !important; }
+.hero-bg .text-white         { color: #f3e8d8 !important; }
+.hero-bg .text-gray-300      { color: #fcd34d !important; }
+.hero-bg .text-gray-400      { color: #a0957a !important; }
+.hero-bg .text-indigo-300    { color: #fbbf24 !important; }
 .hero-bg .border-indigo-400  { border-color: rgba(217,119,6,0.4) !important; }
 .hero-bg .bg-indigo-500      { background-color: rgba(245,158,11,0.15) !important; }
 
@@ -124,7 +147,7 @@ html.dark #coupon-tag-text { color: #fcd34d; }
 .hero-bg .bg-white.bg-opacity-10 { background-color: rgba(245,158,11,0.15) !important; border-color: rgba(245,158,11,0.35) !important; }
 .hero-bg .border-white.border-opacity-20 { border-color: rgba(245,158,11,0.35) !important; }
 .hero-bg .bg-white.bg-opacity-10 span,
-.hero-bg .bg-white.bg-opacity-10 i { color: #f59e0b !important; }
+.hero-bg .bg-white.bg-opacity-10 i { color: #fbbf24 !important; }
 
 /* Hero — dark mode text (light on dark navy) */
 html.dark .hero-bg h1,
@@ -141,16 +164,16 @@ html.dark .bg-white.shadow-md { background-color: #1a1a1a !important; }
 
 /* ─── Scrollbar ─────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 7px; }
-::-webkit-scrollbar-track { background: #fff8f3; }
+::-webkit-scrollbar-track { background: #1a1a1a; }
 ::-webkit-scrollbar-thumb { background: #f59e0b; border-radius: 4px; }
 html.dark ::-webkit-scrollbar-track { background: #0f0f0f; }
 
 /* ─── Navbar ─────────────────────────────────────────────── */
-#navbar { transition: box-shadow 0.3s ease, background 0.3s ease; }
+#navbar { transition: box-shadow 0.3s ease, background 0.3s ease; background: #0a0a0a !important; border-color: #2a2a2a !important; }
 #navbar.scrolled {
-  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.50);
   backdrop-filter: blur(12px);
-  background: rgba(255,255,255,0.97) !important;
+  background: rgba(10,10,10,0.97) !important;
 }
 
 /* ─── Mobile menu slide ──────────────────────────────────── */
@@ -171,7 +194,7 @@ html.dark ::-webkit-scrollbar-track { background: #0f0f0f; }
 
 /* ─── Hero Section ────────────────────────────────────────── */
 .hero-bg {
-  background: linear-gradient(160deg, #fef8f3 0%, #fff8f3 55%, #fef3c7 100%);
+  background: linear-gradient(160deg, #0a0a0a 0%, #1a1a1a 55%, #2b2313 100%);
   min-height: 100vh;
   position: relative;
   overflow: hidden;
@@ -193,7 +216,7 @@ html.dark ::-webkit-scrollbar-track { background: #0f0f0f; }
   pointer-events: none;
 }
 html.dark .hero-bg {
-  background: linear-gradient(160deg, #0f0f0f 0%, #1a1410 55%, #2b2313 100%);
+  background: linear-gradient(160deg, #0a0a0a 0%, #1a1410 55%, #2b2313 100%);
 }
 
 /* ─── Floating animations ────────────────────────────────– */
@@ -308,14 +331,14 @@ html.dark .hero-bg {
 .search-overlay.open { backdrop-filter: blur(8px); }
 
 /* ─── Newsletter ─────────────────────────────────────────– */
-.newsletter-bg { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+.newsletter-bg { background: linear-gradient(135deg, #78350f 0%, #a16207 100%); }
 
 /* ─── Offer Banner ───────────────────────────────────────– */
-.offer-bg { background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); color: #111827; }
-.offer-bg p, .offer-bg span { color: #78350f; }
+.offer-bg { background: linear-gradient(135deg, #92400e 0%, #78350f 100%); color: #f0e4d0; }
+.offer-bg p, .offer-bg span { color: #fcd34d; }
 
 /* ─── Used Books Section ─────────────────────────────────– */
-.used-books-bg { background: linear-gradient(135deg, #fffbf0 0%, #fef3c7 100%); }
+.used-books-bg { background: linear-gradient(135deg, #1a1410 0%, #2b2313 100%); }
 html.dark .used-books-bg { background: linear-gradient(135deg, #1a1410 0%, #2b2313 100%); }
 
 /* ─── Hover States ───────────────────────────────────────– */
