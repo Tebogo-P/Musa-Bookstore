@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout — Musa Bookstore</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { fontFamily: { serif: ['Playfair Display', 'serif'] } } }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+  <script>
+    (function(){
+      if(localStorage.getItem('musaTheme')==='dark') document.documentElement.classList.add('dark');
+    })();
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<div id="toast-container" class="toast-container"></div>
+
+<!-- ── NAVBAR ───────────────────────────────────────────── -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2 flex-shrink-0">
+        <img src="Logo2.png" alt="Musa Bookstore" class="h-20 w-auto object-contain" />
+      </a>
+      <div class="hidden md:flex items-center gap-7">
+        <a href="index.html" class="nav-link text-gray-700 hover:text-indigo-600 font-medium text-sm transition-colors">Home</a>
+        <a href="books.html" class="nav-link text-gray-700 hover:text-indigo-600 font-medium text-sm transition-colors">Books</a>
+        <a href="categories.html" class="nav-link text-gray-700 hover:text-indigo-600 font-medium text-sm transition-colors">Categories</a>
+        <a href="index.html#about" class="nav-link text-gray-700 hover:text-indigo-600 font-medium text-sm transition-colors">About</a>
+      </div>
+      <div class="flex items-center gap-1">
+        <a href="cart.html" class="relative p-2.5 text-gray-500 hover:text-sky-600 hover:bg-sky-50 rounded-xl transition-all" title="Cart">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-badge absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] bg-sky-600 text-white text-[10px] font-bold rounded-full flex items-center justify-center px-1 hidden">0</span>
+        </a>
+        <button id="theme-toggle" title="Toggle dark mode" class="p-2.5 rounded-xl transition-all">
+          <i id="theme-icon" class="fas fa-moon"></i>
+        </button>
+        <button id="mobile-toggle" class="md:hidden p-2.5 text-gray-500 hover:text-sky-600 hover:bg-sky-50 rounded-xl transition-all">
+          <i class="fas fa-bars text-lg" id="hamburger-icon"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-100">
+    <div class="px-4 py-3 space-y-1">
+      <a href="index.html" class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">Home</a>
+      <a href="books.html" class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">Books</a>
+      <a href="categories.html" class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">Categories</a>
+      <a href="index.html#about" class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">About</a>
+      <a href="cart.html" class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">
+        <i class="fas fa-shopping-cart mr-2"></i>Cart
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── PAGE HEADER ─────────────────────────────────────────── -->
+<div class="mt-16 bg-gradient-to-br from-sky-900 via-sky-800 to-sky-700 py-10 px-4">
+  <div class="max-w-7xl mx-auto sm:px-6">
+    <h1 class="font-serif font-bold text-3xl md:text-4xl text-white mb-2">Checkout</h1>
+    <div class="flex items-center gap-2 text-sky-300 text-sm">
+      <a href="index.html" class="hover:text-white transition-colors">Home</a>
+      <i class="fas fa-chevron-right text-xs"></i>
+      <a href="cart.html" class="hover:text-white transition-colors">Cart</a>
+      <i class="fas fa-chevron-right text-xs"></i>
+      <span class="text-white">Checkout</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── MAIN CONTENT ───────────────────────────────────────── -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+  <div class="flex flex-col lg:flex-row gap-8">
+
+    <!-- ── CHECKOUT FORM ────────────────────────────────────── -->
+    <div class="flex-1">
+
+      <!-- Shipping Information -->
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-6">
+        <h2 class="font-serif font-bold text-gray-900 text-lg mb-5 flex items-center gap-2">
+          <i class="fas fa-map-pin text-sky-600"></i>
+          Shipping Address
+        </h2>
+        <form id="shipping-form">
+          <div class="grid grid-cols-1 gap-4 mb-5">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
+              <input type="text" placeholder="John Doe" required
+                     class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none focus:border-sky-400 transition-colors" />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+              <input type="email" placeholder="john@example.com" required
+                     class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none focus:border-sky-400 transition-colors" />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
+              <input type="tel" placeholder="+27 55 123 4567" required
+                     class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none focus:border-sky-400 transition-colors" />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">Street Address</label>
+              <input type="text" placeholder="123 Main Street" required
+                     class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none focus:border-sky-400 transition-colors" />
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4 mb-5">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">City</label>
+              <input type="text" placeholder="Cape Town" required
+                     class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none focus:border-sky-400 transition-colors" />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">Postal Code</label>
+              <input type="text" placeholder="8000" required
+                     class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none focus:border-sky-400 transition-colors" />
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <input type="checkbox" id="same-address" class="accent-sky-600 rounded" checked />
+            <label for="same-address" class="text-sm text-gray-700">Billing address same as shipping</label>
+          </div>
+        </form>
+      </div>
+
+      <!-- Shipping Method -->
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-6">
+        <h2 class="font-serif font-bold text-gray-900 text-lg mb-5 flex items-center gap-2">
+          <i class="fas fa-truck text-sky-600"></i>
+          Shipping Method
+        </h2>
+        <div class="space-y-3">
+          <label class="flex items-start p-4 border-2 border-sky-300 rounded-xl cursor-pointer bg-blue-50">
+            <input type="radio" name="shipping" value="standard" checked class="accent-sky-600 mt-1 flex-shrink-0" />
+            <div class="ml-3 flex-1">
+              <p class="font-semibold text-gray-900 text-sm">Standard Delivery</p>
+              <p class="text-gray-500 text-xs mt-0.5">5-7 business days</p>
+              <p class="font-bold text-gray-900 text-sm mt-2">FREE</p>
+            </div>
+          </label>
+          <label class="flex items-start p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-sky-200 hover:bg-sky-50 transition-colors">
+            <input type="radio" name="shipping" value="express" class="accent-sky-600 mt-1 flex-shrink-0" />
+            <div class="ml-3 flex-1">
+              <p class="font-semibold text-gray-900 text-sm">Express Delivery</p>
+              <p class="text-gray-500 text-xs mt-0.5">2-3 business days</p>
+              <p class="font-bold text-gray-900 text-sm mt-2">R99.00</p>
+            </div>
+          </label>
+          <label class="flex items-start p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-sky-200 hover:bg-sky-50 transition-colors">
+            <input type="radio" name="shipping" value="overnight" class="accent-sky-600 mt-1 flex-shrink-0" />
+            <div class="ml-3 flex-1">
+              <p class="font-semibold text-gray-900 text-sm">Overnight Delivery</p>
+              <p class="text-gray-500 text-xs mt-0.5">Next business day (Joburg only)</p>
+              <p class="font-bold text-gray-900 text-sm mt-2">R199.00</p>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Payment Method -->
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-6">
+        <h2 class="font-serif font-bold text-gray-900 text-lg mb-5 flex items-center gap-2">
+          <i class="fas fa-credit-card text-sky-600"></i>
+          Payment Method
+        </h2>
+        <div class="space-y-3">
+          <label class="flex items-start p-4 border-2 border-sky-300 rounded-xl cursor-pointer bg-blue-50">
+            <input type="radio" name="payment" value="card" checked class="accent-sky-600 mt-1 flex-shrink-0" />
+            <div class="ml-3 flex-1">
+              <p class="font-semibold text-gray-900 flex items-center gap-2">
+                <i class="fas fa-credit-card text-sky-600"></i> Credit/Debit Card
+              </p>
+              <p class="text-gray-500 text-xs mt-1">Visa, Mastercard, American Express</p>
+            </div>
+          </label>
+          <label class="flex items-start p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-sky-200 hover:bg-sky-50 transition-colors">
+            <input type="radio" name="payment" value="bank" class="accent-sky-600 mt-1 flex-shrink-0" />
+            <div class="ml-3 flex-1">
+              <p class="font-semibold text-gray-900 flex items-center gap-2">
+                <i class="fas fa-university text-sky-600"></i> Bank Transfer
+              </p>
+              <p class="text-gray-500 text-xs mt-1">Direct bank account transfer</p>
+            </div>
+          </label>
+          <label class="flex items-start p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-sky-200 hover:bg-sky-50 transition-colors">
+            <input type="radio" name="payment" value="paypal" class="accent-sky-600 mt-1 flex-shrink-0" />
+            <div class="ml-3 flex-1">
+              <p class="font-semibold text-gray-900 flex items-center gap-2">
+                <i class="fab fa-paypal text-blue-600"></i> PayPal
+              </p>
+              <p class="text-gray-500 text-xs mt-1">Fast and secure payment via PayPal</p>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Terms & Conditions -->
+      <div class="bg-blue-50 border border-blue-200 rounded-2xl p-4 flex gap-3">
+        <input type="checkbox" id="agree-terms" class="accent-sky-600 rounded flex-shrink-0 mt-1" checked />
+        <label for="agree-terms" class="text-xs text-gray-700">
+          I agree to the 
+          <a href="#" class="text-sky-600 hover:underline font-semibold">Terms of Service</a>,
+          <a href="#" class="text-sky-600 hover:underline font-semibold">Privacy Policy</a>,
+          and understand the 30-day satisfaction guarantee.
+        </label>
+      </div>
+
+    </div>
+
+    <!-- ── ORDER SUMMARY ────────────────────────────────────── -->
+    <div class="lg:w-96">
+
+      <!-- Order Items -->
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-6 sticky top-24">
+        <h3 class="font-serif font-bold text-gray-900 text-lg mb-5">Order Review</h3>
+        
+        <div id="order-items" class="space-y-4 pb-5 border-b border-gray-100 max-h-80 overflow-y-auto">
+          <!-- Items will be rendered here -->
+        </div>
+
+        <!-- Summary -->
+        <div class="space-y-3 py-5 border-b border-gray-100">
+          <div class="flex justify-between text-sm">
+            <span class="text-gray-600">Subtotal</span>
+            <span id="summary-subtotal" class="font-semibold text-gray-900">R0.00</span>
+          </div>
+          <div class="flex justify-between text-sm">
+            <span class="text-gray-600">Shipping</span>
+            <span id="summary-shipping" class="font-semibold text-gray-900">FREE</span>
+          </div>
+          <div class="flex justify-between text-sm">
+            <span class="text-gray-600">Tax (15%)</span>
+            <span id="summary-tax" class="font-semibold text-gray-900">R0.00</span>
+          </div>
+          <div id="discount-section" class="hidden">
+            <div class="flex justify-between text-sm">
+              <span class="text-gray-600">Discount</span>
+              <span id="summary-discount" class="font-semibold text-red-600">-R0.00</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Total -->
+        <div class="flex justify-between items-center py-4">
+          <span class="font-serif font-bold text-gray-900">Total</span>
+          <span id="summary-total" class="font-serif font-bold text-gray-900 text-2xl">R0.00</span>
+        </div>
+
+        <!-- Place Order Button -->
+        <button id="place-order-btn" class="w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-3 rounded-xl transition-all flex items-center justify-center gap-2 disabled:bg-gray-300 disabled:cursor-not-allowed">
+          <i class="fas fa-check"></i> Place Order
+        </button>
+
+        <!-- Back to Cart -->
+        <a href="cart.html" class="block text-center mt-3 text-sky-600 hover:text-sky-700 font-semibold text-sm transition-colors">
+          <i class="fas fa-arrow-left mr-1"></i> Back to Cart
+        </a>
+      </div>
+
+      <!-- Security Info -->
+      <div class="bg-green-50 border border-green-200 rounded-2xl p-4">
+        <div class="flex gap-3">
+          <i class="fas fa-lock text-green-600 flex-shrink-0 mt-0.5"></i>
+          <div class="text-xs text-green-700">
+            <p class="font-semibold mb-1">Secure & Protected</p>
+            <p>Your payment information is encrypted with SSL security. We never store credit card details.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- ── FOOTER ───────────────────────────────────────────────── -->
+<footer class="bg-gray-900 mt-20 pt-12 pb-8 border-t border-gray-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+      <div>
+        <img src="Logo2.png" alt="Musa Bookstore" class="h-14 w-auto object-contain mb-4" />
+        <p class="text-gray-500 text-sm">Curated collections for the discerning reader.</p>
+      </div>
+      <div>
+        <h4 class="font-bold text-white text-sm mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+          <li><a href="books.html" class="text-gray-400 hover:text-white transition-colors">Browse Books</a></li>
+          <li><a href="categories.html" class="text-gray-400 hover:text-white transition-colors">Categories</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-white text-sm mb-4">Support</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Returns</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-white text-sm mb-4">Legal</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 pt-8">
+      <p class="text-center text-gray-500 text-xs">
+        &copy; 2026 Musa Bookstore. All rights reserved. Built with intention for readers.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/checkout.js"></script>
+
+</body>
+</html>
