@@ -134,59 +134,59 @@
 <script>
 $(function () {
   
-  // Category data with descriptions and emojis
+  // Category data with Font Awesome icons
   const CATEGORIES = [
     {
       name: 'Fiction',
-      emoji: '📖',
+      icon: 'fa-book',
       description: 'Immerse yourself in compelling stories of imagination, adventure, and human emotion.',
       color: 'from-blue-500 to-blue-600'
     },
     {
       name: 'Science Fiction',
-      emoji: '🚀',
+      icon: 'fa-rocket',
       description: 'Explore dystopian futures, space adventures, and worlds limited only by imagination.',
       color: 'from-indigo-500 to-indigo-600'
     },
     {
       name: 'Mystery',
-      emoji: '🔍',
+      icon: 'fa-magnifying-glass',
       description: 'Unravel intricate plots filled with suspense, secrets, and unexpected twists.',
       color: 'from-purple-500 to-purple-600'
     },
     {
       name: 'Non-Fiction',
-      emoji: '📚',
+      icon: 'fa-book-open',
       description: 'Discover real stories, facts, and insights that expand your understanding of the world.',
       color: 'from-amber-500 to-amber-600'
     },
     {
       name: 'Biography',
-      emoji: '👤',
+      icon: 'fa-user',
       description: 'Read inspiring life stories of remarkable individuals who changed history.',
       color: 'from-red-500 to-red-600'
     },
     {
       name: 'Self-Help',
-      emoji: '⚡',
+      icon: 'fa-bolt',
       description: 'Unlock your potential with practical guidance for personal growth and success.',
       color: 'from-green-500 to-green-600'
     },
     {
       name: 'History',
-      emoji: '🏛️',
+      icon: 'fa-landmark',
       description: 'Understand the events, people, and movements that shaped our world.',
       color: 'from-orange-500 to-orange-600'
     },
     {
       name: 'Romance',
-      emoji: '❤️',
+      icon: 'fa-heart',
       description: 'Experience heartwarming tales of love, connection, and emotional journeys.',
       color: 'from-pink-500 to-pink-600'
     },
     {
       name: 'Science',
-      emoji: '🔬',
+      icon: 'fa-flask',
       description: 'Explore the wonders of science, from cosmology to biology and beyond.',
       color: 'from-cyan-500 to-cyan-600'
     }
@@ -202,9 +202,9 @@ $(function () {
       return `
         <a href="books.html?category=${encodeURIComponent(cat.name)}" class="group">
           <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all h-full transform hover:scale-105">
-            <!-- Color Header -->
+            <!-- Icon Header -->
             <div class="bg-gradient-to-br ${cat.color} p-8 flex items-center justify-center min-h-[140px]">
-              <span class="text-6xl drop-shadow-lg">${cat.emoji}</span>
+              <i class="fas ${cat.icon} text-6xl text-white drop-shadow-lg"></i>
             </div>
             <!-- Content -->
             <div class="p-6">
