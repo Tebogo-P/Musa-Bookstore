@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Musa Bookstore — Your Reading Adventure Begins Here</title>
+  <title>Musa Bookstore — Curated Literary Collections</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -98,29 +98,26 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full">
     <div class="flex flex-col md:flex-row items-center gap-12">
       <div class="flex-1 text-center md:text-left relative z-10">
-        <span class="inline-block bg-indigo-500 bg-opacity-20 text-indigo-300 border border-indigo-400 border-opacity-30 text-xs font-semibold px-4 py-1.5 rounded-full mb-5 tracking-wide uppercase">
-          ✦ Free shipping on orders over R500
-        </span>
-        <h1 class="font-serif font-bold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-6">
-          Discover Your<br/>
-          <span class="gradient-text">Next Favourite</span><br/>
-          Book Today
+        <h1 class="font-serif font-bold text-5xl sm:text-6xl lg:text-7xl text-white leading-[1.1] mb-6">
+          Curated<br/>
+          <span class="gradient-text">Collections</span><br/>
+          for the Discerning Reader
         </h1>
-        <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-8 max-w-lg mx-auto md:mx-0">
-          Explore over 50,000 titles across every genre — new and pre-owned. From timeless classics to new releases, your next great read is waiting.
+        <p class="text-gray-400 text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl mx-auto md:mx-0 font-light">
+          A thoughtfully assembled library of over 50,000 titles. First editions, contemporary works, and pre-owned treasures — each volume selected with intention.
         </p>
-        <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-          <a href="books.html" class="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-500 text-white font-semibold px-7 py-3.5 rounded-2xl transition-all shadow-lg shadow-amber-900/40 hover:shadow-amber-500/40 hover:-translate-y-0.5">
-            <i class="fas fa-book-open"></i> Browse Books
+        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <a href="books.html" class="inline-block bg-amber-600 hover:bg-amber-700 text-white font-medium px-8 py-3 rounded transition-all duration-300">
+            Explore Collection
           </a>
-          <a href="books.html?bestsellers=true" class="inline-flex items-center gap-2 bg-white bg-opacity-10 hover:bg-opacity-20 text-white font-semibold px-7 py-3.5 rounded-2xl transition-all border border-white border-opacity-20">
-            <i class="fas fa-fire text-amber-400"></i> Best Sellers
+          <a href="books.html?bestsellers=true" class="inline-block bg-white bg-opacity-5 hover:bg-opacity-10 text-white font-medium px-8 py-3 rounded border border-white border-opacity-20 transition-all duration-300">
+            Featured Selections
           </a>
         </div>
-        <div class="flex items-center gap-5 mt-8 justify-center md:justify-start text-gray-400 text-sm flex-wrap">
-          <span class="flex items-center gap-1.5"><i class="fas fa-shield-alt text-green-400"></i> Secure Payments</span>
-          <span class="flex items-center gap-1.5"><i class="fas fa-truck text-blue-400"></i> Free Delivery over R500</span>
-          <span class="flex items-center gap-1.5"><i class="fas fa-undo text-amber-400"></i> 30-Day Returns</span>
+        <div class="flex items-center gap-8 mt-12 justify-center md:justify-start text-gray-500 text-sm">
+          <div class="border-l border-amber-600 pl-6">Complimentary Delivery<br/><span class="text-xs">over R500</span></div>
+          <div class="border-l border-amber-600 pl-6">Curated Editions<br/><span class="text-xs">hand-selected</span></div>
+          <div class="border-l border-amber-600 pl-6">30-Day Guarantee<br/><span class="text-xs">hassle-free</span></div>
         </div>
       </div>
       <div class="flex-1 flex justify-center items-center relative py-12 md:py-0" style="min-height:340px;">
@@ -183,8 +180,8 @@
 <section class="py-16 md:py-20 bg-gray-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
     <div class="text-center mb-12">
-      <h2 class="font-serif font-bold text-3xl md:text-4xl text-gray-900 mb-3">Explore by Category</h2>
-      <p class="text-gray-500 text-base max-w-xl mx-auto">Find your perfect read from our wide selection of genres</p>
+      <h2 class="font-serif font-bold text-3xl md:text-4xl text-gray-900 mb-3">Browse by Genre</h2>
+      <p class="text-gray-500 text-base max-w-xl mx-auto">Every shelf tells a story. Find your next read.</p>
     </div>
     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
       <a href="books.html?category=Fiction" class="category-card bg-white rounded-2xl p-5 flex flex-col items-center text-center shadow-sm hover:shadow-lg border border-gray-100 transition-all">
@@ -236,8 +233,8 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
     <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
       <div>
-        <h2 class="section-title font-serif font-bold text-3xl md:text-4xl text-gray-900 mb-2">Featured Books</h2>
-        <p class="text-gray-500 text-sm mt-4">Handpicked titles loved by our readers</p>
+        <h2 class="section-title font-serif font-bold text-3xl md:text-4xl text-gray-900 mb-2">Editor's Selection</h2>
+        <p class="text-gray-500 text-sm mt-4">Titles we believe deserve your attention across all genres</p>
       </div>
       <div class="flex gap-2 flex-wrap">
         <button class="tab-btn active text-sm font-semibold px-4 py-2 rounded-xl border border-gray-200 transition-all" data-tab="all">All</button>
@@ -260,12 +257,11 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
     <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
       <div>
-        <span class="inline-block bg-amber-500 bg-opacity-20 text-amber-300 border border-amber-400 border-opacity-30 text-xs font-bold px-3 py-1 rounded-full mb-3 uppercase tracking-wide">Limited Time Offer</span>
-        <h2 class="font-serif font-bold text-3xl md:text-4xl text-white mb-2">25% Off All Romance Books</h2>
-        <p class="text-gray-400 text-sm">Use code <span class="text-amber-400 font-bold bg-amber-400 bg-opacity-10 px-2 py-0.5 rounded font-mono">SAVE25</span> at checkout. This week only! Prices in ZAR (R)</p>
+        <h2 class="font-serif font-bold text-3xl md:text-4xl text-white mb-2">Explore Romance</h2>
+        <p class="text-gray-400 text-sm">A curated selection of the finest love stories, from classic literature to contemporary romance.</p>
       </div>
       <a href="books.html?category=Romance" class="flex-shrink-0 inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-white font-bold px-8 py-3.5 rounded-2xl transition-all shadow-lg shadow-amber-900/30 hover:-translate-y-0.5">
-        Shop Romance <i class="fas fa-arrow-right"></i>
+        Browse Collection <i class="fas fa-arrow-right"></i>
       </a>
     </div>
   </div>
@@ -275,29 +271,29 @@
 <section id="about" class="py-16 md:py-20 bg-gray-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
     <div class="text-center mb-12">
-      <h2 class="font-serif font-bold text-3xl md:text-4xl text-gray-900 mb-3">Why Choose Musa Books?</h2>
-      <p class="text-gray-500 max-w-lg mx-auto text-sm">We're dedicated to making your reading experience exceptional</p>
+      <h2 class="font-serif font-bold text-3xl md:text-4xl text-gray-900 mb-3">Our Approach</h2>
+      <p class="text-gray-500 max-w-lg mx-auto text-sm">Built on a passion for literature and a commitment to thoughtful curation</p>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <div class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-        <div class="feature-icon bg-indigo-50 mx-auto"><i class="fas fa-truck text-indigo-600 text-2xl"></i></div>
-        <h3 class="font-serif font-bold text-gray-900 text-lg mb-2">Free Shipping</h3>
-        <p class="text-gray-500 text-sm">Free delivery on all orders over R500. Fast dispatch from our warehouse.</p>
+        <div class="feature-icon bg-amber-50 mx-auto"><i class="fas fa-feather text-amber-600 text-2xl"></i></div>
+        <h3 class="font-serif font-bold text-gray-900 text-lg mb-2">Curated Selection</h3>
+        <p class="text-gray-500 text-sm">Every title is selected for literary merit and reader value. We stand behind every recommendation.</p>
       </div>
       <div class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-        <div class="feature-icon bg-green-50 mx-auto"><i class="fas fa-shield-alt text-green-600 text-2xl"></i></div>
-        <h3 class="font-serif font-bold text-gray-900 text-lg mb-2">Secure Payments</h3>
-        <p class="text-gray-500 text-sm">All transactions are encrypted and protected by industry-standard security.</p>
+        <div class="feature-icon bg-blue-50 mx-auto"><i class="fas fa-leaf text-blue-600 text-2xl"></i></div>
+        <h3 class="font-serif font-bold text-gray-900 text-lg mb-2">Pre-Owned Editions</h3>
+        <p class="text-gray-500 text-sm">Extend the life of great books. Hand-inspected used copies at responsible prices.</p>
       </div>
       <div class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-        <div class="feature-icon bg-amber-50 mx-auto"><i class="fas fa-undo text-amber-600 text-2xl"></i></div>
-        <h3 class="font-serif font-bold text-gray-900 text-lg mb-2">Easy Returns</h3>
-        <p class="text-gray-500 text-sm">Not satisfied? Return within 30 days for a full refund, no questions asked.</p>
+        <div class="feature-icon bg-emerald-50 mx-auto"><i class="fas fa-book text-emerald-600 text-2xl"></i></div>
+        <h3 class="font-serif font-bold text-gray-900 text-lg mb-2">Reader First</h3>
+        <p class="text-gray-500 text-sm">Hassle-free returns and genuine support from fellow book lovers who understand what you want.</p>
       </div>
       <div class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-        <div class="feature-icon bg-purple-50 mx-auto"><i class="fas fa-headset text-purple-600 text-2xl"></i></div>
-        <h3 class="font-serif font-bold text-gray-900 text-lg mb-2">24/7 Support</h3>
-        <p class="text-gray-500 text-sm">Our friendly support team is always here to help you with any questions.</p>
+        <div class="feature-icon bg-rose-50 mx-auto"><i class="fas fa-hands-holding-heart text-rose-600 text-2xl"></i></div>
+        <h3 class="font-serif font-bold text-gray-900 text-lg mb-2">Community Driven</h3>
+        <p class="text-gray-500 text-sm">Part of a reading community that values thoughtful recommendations and meaningful stories.</p>
       </div>
     </div>
   </div>
@@ -308,8 +304,8 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
     <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
       <div>
-        <h2 class="section-title font-serif font-bold text-3xl md:text-4xl text-gray-900 mb-2">New Arrivals</h2>
-        <p class="text-gray-500 text-sm mt-4">Fresh titles just landed in our store</p>
+        <h2 class="section-title font-serif font-bold text-3xl md:text-4xl text-gray-900 mb-2">Recent Acquisitions</h2>
+        <p class="text-gray-500 text-sm mt-4">The newest titles in our collection, all carefully vetted</p>
       </div>
       <a href="books.html" class="text-indigo-600 font-semibold text-sm hover:underline flex items-center gap-1">
         View all <i class="fas fa-arrow-right text-xs"></i>
@@ -331,11 +327,11 @@
           </div>
           <span class="text-xs font-bold text-amber-700 bg-amber-100 px-3 py-1 rounded-full uppercase tracking-wide border border-amber-200">Pre-Owned Collection</span>
         </div>
-        <h2 class="section-title-used font-serif font-bold text-3xl md:text-4xl text-gray-900 mb-2">Used Books</h2>
-        <p class="text-gray-500 text-sm mt-4 max-w-lg">Same great stories, friendlier prices. Every pre-owned book is inspected and graded so you know exactly what you're getting.</p>
+        <h2 class="section-title-used font-serif font-bold text-3xl md:text-4xl text-gray-900 mb-2">Previously Loved Books</h2>
+        <p class="text-gray-500 text-sm mt-4 max-w-lg">Well-read editions deserve a second life. Each volume is graded by condition, so you know exactly what you're getting—and books get a chance to find their next devoted reader.</p>
       </div>
       <a href="books.html#used" class="flex-shrink-0 text-amber-700 font-semibold text-sm hover:underline flex items-center gap-1">
-        Browse all used <i class="fas fa-arrow-right text-xs"></i>
+        Browse all <i class="fas fa-arrow-right text-xs"></i>
       </a>
     </div>
  
@@ -377,9 +373,9 @@
 <!-- ── NEWSLETTER ────────────────────────────────────────── -->
 <section class="newsletter-bg py-16">
   <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-    <div class="inline-block bg-white bg-opacity-10 rounded-full px-4 py-1.5 text-white text-xs font-semibold tracking-wide mb-4 uppercase">Newsletter</div>
-    <h2 class="font-serif font-bold text-3xl md:text-4xl text-white mb-3">Stay Updated with New Books</h2>
-    <p class="text-indigo-200 text-sm mb-8">Get the latest releases, deals, and reading recommendations delivered to your inbox.</p>
+    <div class="inline-block bg-white bg-opacity-10 rounded-full px-4 py-1.5 text-white text-xs font-semibold tracking-wide mb-4 uppercase">Reading List</div>
+    <h2 class="font-serif font-bold text-3xl md:text-4xl text-white mb-3">Join the Collection</h2>
+    <p class="text-indigo-200 text-sm mb-8">Receive monthly recommendations from our editors: new arrivals, overlooked classics, and literary discoveries worth your time.</p>
     <form id="newsletter-form" class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
       <input type="email" id="newsletter-email" placeholder="Enter your email address"
              class="flex-1 bg-white bg-opacity-15 border border-white border-opacity-30 text-white placeholder-indigo-200 rounded-2xl px-5 py-3.5 outline-none focus:bg-white focus:bg-opacity-20 transition-all text-sm" />
@@ -387,7 +383,7 @@
         Subscribe
       </button>
     </form>
-    <p class="text-indigo-300 text-xs mt-4">No spam, ever. Unsubscribe at any time.</p>
+    <p class="text-indigo-300 text-xs mt-4">Zero spam. Curated monthly. Unsubscribe anytime.</p>
   </div>
 </section>
  
@@ -402,7 +398,7 @@
           </div>
           <span class="font-serif font-bold text-xl text-white">Musa<span class="text-indigo-400">Books</span></span>
         </div>
-        <p class="text-gray-400 text-sm leading-relaxed mb-5">Your trusted online bookstore since 2020. Bringing stories to life, one page at a time.</p>
+        <p class="text-gray-400 text-sm leading-relaxed mb-5">A thoughtfully curated bookstore for readers who value substance over hype. Discover new worlds through carefully selected editions—new and pre-owned.</p>
         <div class="flex gap-3">
           <a href="#" class="w-9 h-9 bg-gray-800 hover:bg-indigo-600 rounded-xl flex items-center justify-center transition-all text-sm"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="w-9 h-9 bg-gray-800 hover:bg-sky-500 rounded-xl flex items-center justify-center transition-all text-sm"><i class="fab fa-twitter"></i></a>
