@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Musa Bookstore — Our Story</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { fontFamily: { serif: ['Playfair Display', 'serif'] } } }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+  <script>
+    (function(){
+      if(localStorage.getItem('musaTheme')==='dark') document.documentElement.classList.add('dark');
+    })();
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<div id="toast-container" class="toast-container"></div>
+
+<!-- ── NAVBAR ───────────────────────────────────────────── -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2">
+    <div class="flex flex-col items-center">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-2 flex-shrink-0 mb-2">
+        <img src="Logo2.png" alt="Musa Bookstore" class="h-28 w-auto object-contain" />
+      </a>
+      <!-- Navigation Links -->
+      <div class="flex items-center justify-center gap-8 mb-2">
+        <a href="index.html" class="nav-link text-gray-700 hover:text-indigo-600 font-medium text-sm transition-colors">Home</a>
+        <a href="books.html" class="nav-link text-gray-700 hover:text-indigo-600 font-medium text-sm transition-colors">Books</a>
+        <a href="guide.html" class="nav-link text-gray-700 hover:text-indigo-600 font-medium text-sm transition-colors">Guide</a>
+        <a href="about.html" class="nav-link active text-indigo-600 font-medium text-sm transition-colors">About</a>
+      </div>
+      <!-- Utility Icons -->
+      <div class="flex items-center gap-1">
+        <button id="search-toggle" class="p-2.5 text-gray-500 hover:text-sky-600 hover:bg-sky-50 rounded-xl transition-all">
+          <i class="fas fa-search"></i>
+        </button>
+        <a href="cart.html" class="relative p-2.5 text-gray-500 hover:text-sky-600 hover:bg-sky-50 rounded-xl transition-all">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-badge absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] bg-sky-600 text-white text-[10px] font-bold rounded-full flex items-center justify-center px-1 hidden">0</span>
+        </a>
+        <button id="theme-toggle" title="Toggle dark mode" class="p-2.5 rounded-xl transition-all">
+          <i id="theme-icon" class="fas fa-moon"></i>
+        </button>
+        <button id="mobile-toggle" class="p-2.5 text-gray-500 hover:text-sky-600 hover:bg-sky-50 rounded-xl transition-all">
+          <i class="fas fa-bars text-lg" id="hamburger-icon"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobile-menu" class="bg-white border-t border-gray-100 hidden">
+    <div class="px-4 py-3 space-y-1 flex flex-col items-center">
+      <a href="index.html" class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">Home</a>
+      <a href="books.html" class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">Books</a>
+      <a href="guide.html" class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">Guide</a>
+      <a href="about.html" class="block px-3 py-2.5 text-indigo-600 font-semibold rounded-xl bg-indigo-50 transition-colors">About</a>
+      <a href="cart.html" class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">
+        <i class="fas fa-shopping-cart mr-2"></i>Cart
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── PAGE HEADER ─────────────────────────────────────────── -->
+<div class="mt-16 bg-gradient-to-br from-indigo-900 via-indigo-800 to-indigo-700 py-6 px-4">
+  <div class="max-w-7xl mx-auto sm:px-6">
+    <h1 class="font-serif font-bold text-3xl md:text-4xl text-white mb-2">About Musa Bookstore</h1>
+    <div class="flex items-center gap-2 text-indigo-300 text-sm">
+      <a href="index.html" class="hover:text-white transition-colors">Home</a>
+      <i class="fas fa-chevron-right text-xs"></i>
+      <span class="text-white">About</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── MAIN CONTENT ───────────────────────────────────────── -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
+  
+  <!-- Hero Section -->
+  <div class="mb-16">
+    <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+      <h2 class="font-serif font-bold text-3xl text-gray-900 mb-6">Our Story</h2>
+      <p class="text-gray-700 leading-relaxed text-lg mb-4">
+        Musa Bookstore began as a dream in the heart of book lovers who believed that literature should be accessible, exciting, and ever-present in our communities. What started as an ambitious pop-up bookstore culture has evolved into a beloved destination for readers of all ages and preferences.
+      </p>
+      <p class="text-gray-700 leading-relaxed text-lg">
+        From humble beginnings setting up in different neighborhoods, market squares, and community centers, we traveled across the city bringing curated collections of books directly to passionate readers. Each pop-up location told a story, connected with a unique community, and created memorable experiences around the love of reading.
+      </p>
+    </div>
+  </div>
+
+  <!-- Journey Timeline -->
+  <div class="mb-16">
+    <h2 class="font-serif font-bold text-3xl text-gray-900 mb-8">Our Journey</h2>
+    <div class="space-y-8">
+      <!-- Timeline Item 1 -->
+      <div class="flex gap-6">
+        <div class="flex-shrink-0">
+          <div class="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-600 text-white">
+            <i class="fas fa-book text-lg"></i>
+          </div>
+        </div>
+        <div class="flex-grow">
+          <h3 class="font-serif font-bold text-xl text-gray-900 mb-2">2020: The Beginning</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Musa Bookstore launched as an independent pop-up vendor, bringing hand-selected books to weekend markets and community events. Our mission was simple: make books accessible and foster a love of reading in every neighborhood.
+          </p>
+        </div>
+      </div>
+
+      <!-- Timeline Item 2 -->
+      <div class="flex gap-6">
+        <div class="flex-shrink-0">
+          <div class="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-600 text-white">
+            <i class="fas fa-location-dot text-lg"></i>
+          </div>
+        </div>
+        <div class="flex-grow">
+          <h3 class="font-serif font-bold text-xl text-gray-900 mb-2">2021-2023: Changing Locations</h3>
+          <p class="text-gray-600 leading-relaxed">
+            We embraced the nomadic lifestyle, rotating through multiple neighborhoods and communities. Each location became a hub for book lovers—from downtown markets to suburban festivals, university campuses to cultural centers. Our pop-up events became anticipated gatherings where readers discovered new titles and connected with fellow book enthusiasts.
+          </p>
+        </div>
+      </div>
+
+      <!-- Timeline Item 3 -->
+      <div class="flex gap-6">
+        <div class="flex-shrink-0">
+          <div class="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-600 text-white">
+            <i class="fas fa-store text-lg"></i>
+          </div>
+        </div>
+        <div class="flex-grow">
+          <h3 class="font-serif font-bold text-xl text-gray-900 mb-2">2024: Going Digital & Beyond</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Recognizing the demand our pop-up presence created, we established our online store to serve our growing community of readers. Musa Bookstore now combines the convenience of digital shopping with the curated, personal touch that made our pop-ups special. We continue to honor our roots by carrying the diverse, thoughtfully selected inventory that defines us.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mission & Values -->
+  <div class="grid md:grid-cols-2 gap-8 mb-16">
+    <!-- Mission -->
+    <div class="bg-white rounded-2xl shadow-lg p-8">
+      <div class="flex items-center gap-3 mb-4">
+        <i class="fas fa-bullseye text-3xl text-indigo-600"></i>
+        <h3 class="font-serif font-bold text-2xl text-gray-900">Our Mission</h3>
+      </div>
+      <p class="text-gray-600 leading-relaxed">
+        To inspire and empower readers by providing access to extraordinary books, fostering community connections, and celebrating the transformative power of literature. We believe every person deserves to find their next great read, regardless of their location or circumstances.
+      </p>
+    </div>
+
+    <!-- Values -->
+    <div class="bg-white rounded-2xl shadow-lg p-8">
+      <div class="flex items-center gap-3 mb-4">
+        <i class="fas fa-heart text-3xl text-indigo-600"></i>
+        <h3 class="font-serif font-bold text-2xl text-gray-900">Our Values</h3>
+      </div>
+      <ul class="space-y-3 text-gray-600">
+        <li class="flex items-start gap-3">
+          <i class="fas fa-check text-indigo-600 mt-1 flex-shrink-0"></i>
+          <span><strong>Accessibility:</strong> Books for everyone, everywhere</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <i class="fas fa-check text-indigo-600 mt-1 flex-shrink-0"></i>
+          <span><strong>Curation:</strong> Thoughtfully selected collections</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <i class="fas fa-check text-indigo-600 mt-1 flex-shrink-0"></i>
+          <span><strong>Community:</strong> Building connections through reading</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Why Choose Us -->
+  <div class="mb-16">
+    <h2 class="font-serif font-bold text-3xl text-gray-900 mb-8">Why Choose Musa Bookstore</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+        <div class="mb-4">
+          <i class="fas fa-heart text-3xl text-red-500"></i>
+        </div>
+        <h3 class="font-serif font-bold text-lg text-gray-900 mb-2">Passion for Books</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Our collections are hand-picked by passionate readers who understand what makes a great book. Every title in our inventory has been selected with care.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+        <div class="mb-4">
+          <i class="fas fa-people-group text-3xl text-blue-500"></i>
+        </div>
+        <h3 class="font-serif font-bold text-lg text-gray-900 mb-2">Community Connection</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Born from pop-up culture, we understand the importance of community. We foster meaningful connections among readers and celebrate shared love of literature.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+        <div class="mb-4">
+          <i class="fas fa-globe text-3xl text-green-500"></i>
+        </div>
+        <h3 class="font-serif font-bold text-lg text-gray-900 mb-2">Diverse Selection</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          From fiction to self-help, history to science, we offer diverse genres that cater to readers at every stage of their literary journey.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact CTA -->
+  <div class="bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-2xl shadow-lg p-8 md:p-12 text-center text-white">
+    <h2 class="font-serif font-bold text-2xl mb-4">Get in Touch</h2>
+    <p class="text-indigo-100 mb-6 max-w-2xl mx-auto">
+      Have questions about Musa Bookstore or want to learn more about our story? We'd love to hear from you. Connect with us through email or visit our online store to discover your next favorite book.
+    </p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="mailto:hello@musabooks.com" class="bg-white text-indigo-600 hover:bg-indigo-50 font-semibold px-8 py-3 rounded-xl transition-colors">
+        <i class="fas fa-envelope mr-2"></i>Email Us
+      </a>
+      <a href="books.html" class="border-2 border-white text-white hover:bg-white hover:text-indigo-600 font-semibold px-8 py-3 rounded-xl transition-colors">
+        <i class="fas fa-book mr-2"></i>Browse Books
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── FOOTER ───────────────────────────────────────────── -->
+<footer class="mt-20 bg-gray-900 text-white border-t border-gray-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
+      <div>
+        <h3 class="font-serif font-semibold text-white mb-4">Musa Bookstore</h3>
+        <p class="text-gray-400 text-sm">Bringing books to communities, one page at a time since 2020.</p>
+      </div>
+      <div>
+        <h4 class="font-serif font-semibold text-white mb-4">Quick Links</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+          <li><a href="books.html" class="text-gray-400 hover:text-white transition-colors">Browse Books</a></li>
+          <li><a href="guide.html" class="text-gray-400 hover:text-white transition-colors">All Guides</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-serif font-semibold text-white mb-4">Guide</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="books.html?category=Fiction" class="text-gray-400 hover:text-white transition-colors">Fiction</a></li>
+          <li><a href="books.html?category=Mystery" class="text-gray-400 hover:text-white transition-colors">Mystery</a></li>
+          <li><a href="books.html?category=Biography" class="text-gray-400 hover:text-white transition-colors">Biography</a></li>
+          <li><a href="books.html?category=Self-Help" class="text-gray-400 hover:text-white transition-colors">Self-Help</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-serif font-semibold text-white mb-4">Contact</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li class="flex items-center gap-2"><i class="fas fa-envelope text-indigo-400 text-xs w-4"></i><a href="mailto:hello@musabooks.com" class="text-gray-400 hover:text-white transition-colors">hello@musabooks.com</a></li>
+          <li class="flex items-center gap-2"><i class="fas fa-phone text-indigo-400 text-xs w-4"></i><span class="text-gray-400">+27 55 123 4567</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between">
+      <p class="text-gray-400 text-sm">&copy; 2026 Musa Bookstore. All rights reserved.</p>
+      <div class="flex gap-4 mt-4 md:mt-0">
+        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+          <i class="fab fa-facebook text-lg"></i>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+          <i class="fab fa-twitter text-lg"></i>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+          <i class="fab fa-instagram text-lg"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to Top Button -->
+<button id="scroll-top" class="w-11 h-11 bg-sky-600 hover:bg-sky-700 text-white rounded-2xl flex items-center justify-center shadow-lg transition-all">
+  <i class="fas fa-arrow-up text-sm"></i>
+</button>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="js/app.js"></script>
+<script>
+$(function () {
+  // Dark mode: init from localStorage
+  const savedTheme = localStorage.getItem('musaTheme');
+  if (savedTheme === 'dark') {
+    document.documentElement.classList.add('dark');
+    $('#theme-icon').removeClass('fa-moon').addClass('fa-sun');
+  }
+
+  // Theme toggle
+  $('#theme-toggle').on('click', function() {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('musaTheme', isDark ? 'dark' : 'light');
+    $('#theme-icon').toggleClass('fa-moon fa-sun');
+  });
+
+  // Mobile menu toggle
+  $('#mobile-toggle').on('click', function() {
+    $('#mobile-menu').toggleClass('hidden');
+  });
+
+  // Scroll to top
+  $(window).on('scroll', function() {
+    if ($(this).scrollTop() > 300) {
+      $('#scroll-top').removeClass('opacity-0 pointer-events-none');
+    } else {
+      $('#scroll-top').addClass('opacity-0 pointer-events-none');
+    }
+  });
+
+  $('#scroll-top').on('click', function() {
+    $('html, body').animate({scrollTop: 0}, 600);
+  });
+
+  // Update cart badge on page load
+  function updateCartBadge() {
+    const cart = JSON.parse(localStorage.getItem('musaCart') || '[]');
+    const badge = $('.cart-badge');
+    const count = cart.length;
+    if (count > 0) {
+      badge.text(count).removeClass('hidden');
+    } else {
+      badge.addClass('hidden');
+    }
+  }
+  updateCartBadge();
+});
+</script>
+
+</body>
+</html>
