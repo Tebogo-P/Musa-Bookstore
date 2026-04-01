@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — Musa Bookstore</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { fontFamily: { serif: ['Playfair Display', 'serif'] } } }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+  <script>
+    (function(){
+      if(localStorage.getItem('musaTheme')==='dark') document.documentElement.classList.add('dark');
+    })();
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<div id="toast-container" class="toast-container"></div>
+
+<!-- ── NAVBAR ───────────────────────────────────────────– -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2">
+    <div class="flex items-center justify-center gap-8">
+      <a href="index.html" class="flex items-center gap-2 flex-shrink-0">
+        <img src="Logo2.png" alt="Musa Bookstore" class="h-28 w-auto object-contain" />
+      </a>
+      <div class="flex items-center justify-center gap-4">
+        <a href="index.html" class="nav-link text-gray-700 hover:text-indigo-600 font-medium text-xs transition-colors">Home</a>
+        <span class="text-gray-300">•</span>
+        <a href="books.html" class="nav-link text-gray-700 hover:text-indigo-600 font-medium text-xs transition-colors">Books</a>
+        <span class="text-gray-300">•</span>
+        <a href="guide.html" class="nav-link text-gray-700 hover:text-indigo-600 font-medium text-xs transition-colors">Guide</a>
+        <span class="text-gray-300">•</span>
+        <a href="about.html" class="nav-link text-gray-700 hover:text-indigo-600 font-medium text-xs transition-colors">About</a>
+      </div>
+      <div class="flex items-center gap-1">
+        <a href="cart.html" class="relative p-2.5 text-gray-500 hover:text-sky-600 hover:bg-sky-50 rounded-xl transition-all" title="Cart">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-badge absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] bg-sky-600 text-white text-[10px] font-bold rounded-full flex items-center justify-center px-1 hidden">0</span>
+        </a>
+        <button id="theme-toggle" title="Toggle dark mode" class="p-2.5 rounded-xl transition-all">
+          <i id="theme-icon" class="fas fa-moon"></i>
+        </button>
+        <button id="mobile-toggle" class="p-2.5 text-gray-500 hover:text-sky-600 hover:bg-sky-50 rounded-xl transition-all">
+          <i class="fas fa-bars text-lg" id="hamburger-icon"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobile-menu" class="bg-white border-t border-gray-100 hidden">
+    <div class="px-4 py-3 space-y-1 flex flex-col items-center">
+      <a href="index.html" class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">Home</a>
+      <a href="books.html" class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">Books</a>
+      <a href="guide.html" class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">Guide</a>
+      <a href="about.html" class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">About</a>
+      <a href="cart.html" class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">
+        <i class="fas fa-shopping-cart mr-2"></i>Cart
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── MAIN CONTENT ─────────────────────────────────────── -->
+<main class="pt-32 pb-16">
+  <div class="max-w-md mx-auto px-4">
+    <!-- Header -->
+    <div class="text-center mb-10">
+      <h1 class="font-serif font-bold text-4xl text-gray-900 mb-3">Welcome Back</h1>
+      <p class="text-gray-600">Log in to your account to view your purchase history and dashboard</p>
+    </div>
+
+    <!-- Login Form -->
+    <div class="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
+      <form id="login-form" class="space-y-5">
+        <!-- Email -->
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+          <input type="email" id="email" placeholder="you@example.com" 
+                 class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all"
+                 required />
+        </div>
+
+        <!-- Password -->
+        <div>
+          <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+          <input type="password" id="password" placeholder="Enter your password" 
+                 class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all"
+                 required />
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2">
+          <i class="fas fa-sign-in-alt"></i>
+          Log In
+        </button>
+      </form>
+
+      <!-- Register Link -->
+      <div class="mt-6 pt-6 border-t border-gray-100 text-center">
+        <p class="text-gray-600 text-sm">Don't have an account? <a href="register.html" class="text-indigo-600 hover:text-indigo-700 font-semibold">Create one here</a></p>
+      </div>
+    </div>
+
+    <!-- Info Section -->
+    <div class="mt-12 bg-indigo-50 rounded-2xl p-8 border border-indigo-100">
+      <h3 class="font-semibold text-gray-900 mb-4 flex items-center gap-2">
+        <i class="fas fa-lightbulb text-amber-600"></i>
+        Demo Credentials
+      </h3>
+      <p class="text-sm text-gray-700 mb-3">Try logging in with a test account:</p>
+      <ul class="text-sm text-gray-600 space-y-2">
+        <li><strong>Email:</strong> demo@example.com</li>
+        <li><strong>Password:</strong> demo123</li>
+      </ul>
+      <p class="text-xs text-gray-500 mt-4">Or create a new account to get started!</p>
+    </div>
+  </div>
+</main>
+
+<!-- ── FOOTER ───────────────────────────────────────────– -->
+<footer class="bg-gray-900 text-gray-300 py-8 px-4 border-t border-gray-800">
+  <div class="max-w-7xl mx-auto text-center text-sm">
+    <p>&copy; 2026 Musa Bookstore. All rights reserved. | <a href="#" class="hover:text-white transition-colors">Privacy Policy</a> • <a href="#" class="hover:text-white transition-colors">Terms of Service</a></p>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+<script src="js/account.js"></script>
+<script>
+  // ─── Theme Toggle ───────────────────────────────────────
+  document.getElementById('theme-toggle').addEventListener('click', () => {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('musaTheme', isDark ? 'dark' : 'light');
+  });
+
+  // ─── Mobile Menu Toggle ─────────────────────────────────
+  document.getElementById('mobile-toggle').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+  });
+
+  // ─── Check if already logged in ──────────────────────────
+  if (Account.isLoggedIn()) {
+    window.location.href = 'dashboard.html';
+  }
+
+  // ─── Create demo account on first load ───────────────────
+  const hasDemo = Account.getAllUsers().some(u => u.email === 'demo@example.com');
+  if (!hasDemo) {
+    Account.register('demo@example.com', 'demo123', 'Demo User');
+    // Add sample purchase to demo account
+    const demoUser = Account.getCurrentUser();
+    if (demoUser) {
+      Account.addPurchase({
+        items: [
+          { title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', price: 189, qty: 1 },
+          { title: 'To Kill a Mockingbird', author: 'Harper Lee', price: 219, qty: 1 }
+        ],
+        total: 408,
+        discount: 0,
+        customerName: 'Demo User',
+        email: 'demo@example.com'
+      });
+      Account.logout();
+    }
+  }
+
+  // ─── Login Form Handler ─────────────────────────────────
+  document.getElementById('login-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+
+    const result = Account.login(email, password);
+    
+    if (result.success) {
+      showToast(result.message, 'success');
+      setTimeout(() => {
+        window.location.href = 'dashboard.html';
+      }, 1500);
+    } else {
+      showToast(result.message, 'error');
+    }
+  });
+
+  // ─── Toast Notification ─────────────────────────────────
+  function showToast(message, type = 'info') {
+    const container = document.getElementById('toast-container');
+    const toast = document.createElement('div');
+    const bgColor = type === 'success' ? 'bg-green-500' : type === 'error' ? 'bg-red-500' : 'bg-blue-500';
+    
+    toast.className = `${bgColor} text-white px-6 py-3 rounded-lg shadow-lg mb-3 flex items-center gap-3 animate-slideIn`;
+    toast.innerHTML = `
+      <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
+      <span>${message}</span>
+    `;
+    
+    container.appendChild(toast);
+    setTimeout(() => toast.remove(), 4000);
+  }
+</script>
+
+<style>
+  @keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  .animate-slideIn { animation: slideIn 0.3s ease-out; }
+</style>
+
+</body>
+</html>

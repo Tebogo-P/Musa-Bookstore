@@ -119,28 +119,68 @@ $(function() {
 
     // Simulate payment processing (in a real app, this would call a payment gateway)
     setTimeout(() => {
+      // Get customer info
+      const customerName = $('#shipping-form input[placeholder="John Doe"]').val();
+      const customerEmail = $('#shipping-form input[type="email"]').val();
+      const customerPhone = $('#shipping-form input[type="tel"]').val();
+      const shippingAddress = $('#shipping-form input[placeholder="123 Main Street"]').val() + ', ' + 
+                            $('#shipping-form').find('input[placeholder="Cape Town"]').val() + ' ' +
+                            $('#shipping-form').find('input[placeholder="8000"]').val();
+
+      // Calculate totals
+      const subtotal = Cart.subtotal();
+      const coupon = Cart.getAppliedCoupon();
+      const discountAmount = coupon ? subtotal * coupon.discount : 0;
+      const taxableAmount = subtotal - discountAmount;
+      const shippingCost = getShippingCost();
+      const tax = (taxableAmount + shippingCost) * 0.15;
+      const total = taxableAmount + shippingCost + tax;
+
+      // Prepare items for history
+      const items = Cart.get().map(item => {
+        const book = Cart.resolveBook(item);
+        return {
+          id: item.id,
+          title: book.title,
+          author: book.author,
+          price: book.price,
+          qty: item.qty
+        };
+      });
+
       // Store order information
       const orderData = {
         id: 'ORD' + Date.now(),
         timestamp: new Date().toISOString(),
         items: Cart.get(),
-        subtotal: Cart.subtotal(),
-        coupon: Cart.getAppliedCoupon(),
+        subtotal: subtotal,
+        coupon: coupon,
         shipping: shippingMethod,
-        shippingCost: getShippingCost(),
+        shippingCost: shippingCost,
         paymentMethod: paymentMethod,
         customerInfo: {
-          name: $('#shipping-form input[placeholder="John Doe"]').val(),
-          email: $('#shipping-form input[type="email"]').val(),
-          phone: $('#shipping-form input[type="tel"]').val(),
-          address: $('#shipping-form input[placeholder="123 Main Street"]').val(),
-          city: $('#shipping-form').find('input[placeholder="Cape Town"]').val(),
-          postalCode: $('#shipping-form').find('input[placeholder="8000"]').val()
+          name: customerName,
+          email: customerEmail,
+          phone: customerPhone,
+          address: shippingAddress
         }
       };
 
       // Save order (would go to backend in real app)
       localStorage.setItem('lastOrder', JSON.stringify(orderData));
+
+      // Save to user account if logged in
+      if (typeof Account !== 'undefined' && Account.isLoggedIn()) {
+        Account.addPurchase({
+          items: items,
+          total: total,
+          discount: discountAmount,
+          customerName: customerName,
+          email: customerEmail,
+          phone: customerPhone,
+          shippingAddress: shippingAddress
+        });
+      }
 
       // Clear cart
       Cart.clear();
