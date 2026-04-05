@@ -23,7 +23,7 @@
 
 <div id="toast-container" class="toast-container"></div>
 
-<!-- ── NAVBAR ───────────────────────────────────────────– -->
+<!-- ── NAVBAR ───────────────────────────────────────────── -->
 <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2">
     <div class="flex items-center justify-center gap-8">
@@ -40,7 +40,7 @@
         <a href="about.html" class="nav-link text-gray-700 hover:text-indigo-600 font-medium text-xs transition-colors">About</a>
       </div>
       <div class="flex items-center gap-1">
-        <a href="cart.html" class="relative p-2.5 text-gray-500 hover:text-sky-600 hover:bg-sky-50 rounded-xl transition-all" title="Cart">
+        <a href="cart.html" class="relative p-2.5 text-gray-500 hover:text-sky-600 hover:bg-sky-50 rounded-xl transition-all">
           <i class="fas fa-shopping-cart"></i>
           <span class="cart-badge absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] bg-sky-600 text-white text-[10px] font-bold rounded-full flex items-center justify-center px-1 hidden">0</span>
         </a>
@@ -55,11 +55,11 @@
   </div>
   <div id="mobile-menu" class="bg-white border-t border-gray-100 hidden">
     <div class="px-4 py-3 space-y-1 flex flex-col items-center">
-      <a href="index.html" class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">Home</a>
-      <a href="books.html" class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">Books</a>
-      <a href="guide.html" class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">Guide</a>
-      <a href="about.html" class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">About</a>
-      <a href="cart.html" class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">
+      <a href="index.html"  class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">Home</a>
+      <a href="books.html"  class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">Books</a>
+      <a href="guide.html"  class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">Guide</a>
+      <a href="about.html"  class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">About</a>
+      <a href="cart.html"   class="block px-3 py-2.5 text-gray-700 font-medium rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors">
         <i class="fas fa-shopping-cart mr-2"></i>Cart
       </a>
     </div>
@@ -69,435 +69,547 @@
 <!-- ── MAIN CONTENT ─────────────────────────────────────── -->
 <main class="pt-32 pb-16">
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
-    <!-- Header -->
-    <div class="flex items-center justify-between mb-10">
+
+    <!-- Page header -->
+    <div class="flex items-center justify-between mb-10 flex-wrap gap-4">
       <div>
-        <h1 class="font-serif font-bold text-4xl text-gray-900 mb-2">Your Dashboard</h1>
-        <p class="text-gray-600">Welcome back! Here's your account overview and purchase history</p>
+        <h1 class="font-serif font-bold text-4xl text-gray-900 mb-2" id="welcome-msg">Your Dashboard</h1>
+        <p class="text-gray-600" id="welcome-sub">Here's your account overview and purchase history.</p>
       </div>
-      <button id="logout-btn" class="hidden md:flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300">
-        <i class="fas fa-sign-out-alt"></i>
-        Logout
+      <button id="logout-btn"
+        class="hidden md:flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white
+               font-semibold px-6 py-3 rounded-xl transition-all duration-300">
+        <i class="fas fa-sign-out-alt"></i> Logout
       </button>
     </div>
 
-    <!-- Content Tabs -->
-    <div class="flex gap-4 mb-8 border-b border-gray-200">
-      <button class="tab-btn active px-4 py-3 font-semibold text-indigo-600 border-b-2 border-indigo-600 flex items-center gap-2" data-tab="profile">
-        <i class="fas fa-user"></i>Profile
+    <!-- Returning client banner -->
+    <div id="returning-banner"
+      class="hidden mb-8 bg-gradient-to-r from-amber-600 to-amber-500 rounded-2xl p-6
+             flex items-center justify-between flex-wrap gap-4 shadow-lg">
+      <div class="flex items-center gap-4">
+        <span class="text-4xl">👋</span>
+        <div>
+          <p class="font-serif font-bold text-white text-xl" id="banner-title">Welcome back!</p>
+          <p class="text-amber-100 text-sm" id="banner-sub">Great to see you again.</p>
+        </div>
+      </div>
+      <a href="books.html"
+        class="flex-shrink-0 bg-white text-amber-700 font-bold px-6 py-2.5 rounded-xl
+               hover:bg-amber-50 transition text-sm shadow">
+        <i class="fas fa-book mr-2"></i>Browse New Arrivals
+      </a>
+    </div>
+
+    <!-- Tabs -->
+    <div class="flex gap-0 mb-8 border-b border-gray-200 overflow-x-auto">
+      <button class="tab-btn active whitespace-nowrap px-5 py-3 font-semibold text-sm
+               text-amber-600 border-b-2 border-amber-600 flex items-center gap-2 transition-all" data-tab="profile">
+        <i class="fas fa-user"></i> Profile
       </button>
-      <button class="tab-btn px-4 py-3 font-semibold text-gray-600 hover:text-indigo-600 flex items-center gap-2" data-tab="purchases">
-        <i class="fas fa-history"></i>Purchase History
+      <button class="tab-btn whitespace-nowrap px-5 py-3 font-semibold text-sm
+               text-gray-500 hover:text-amber-600 flex items-center gap-2 transition-all" data-tab="purchases">
+        <i class="fas fa-shopping-bag"></i> Purchases
+      </button>
+      <button class="tab-btn whitespace-nowrap px-5 py-3 font-semibold text-sm
+               text-gray-500 hover:text-amber-600 flex items-center gap-2 transition-all" data-tab="rewards">
+        <i class="fas fa-star"></i> Rewards
+      </button>
+      <button class="tab-btn whitespace-nowrap px-5 py-3 font-semibold text-sm
+               text-gray-500 hover:text-amber-600 flex items-center gap-2 transition-all" data-tab="activity">
+        <i class="fas fa-stream"></i> Activity
       </button>
     </div>
 
-    <!-- Profile Tab -->
+    <!-- ── PROFILE TAB ───────────────────────────────────── -->
     <div id="profile-tab" class="tab-content">
       <div class="grid md:grid-cols-3 gap-8">
-        <!-- User Info Card -->
+
+        <!-- Form -->
         <div class="md:col-span-2">
           <div class="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
             <h2 class="font-serif font-bold text-2xl text-gray-900 mb-6 flex items-center gap-2">
-              <i class="fas fa-user-circle text-indigo-600"></i>
-              Account Information
+              <i class="fas fa-user-circle text-amber-500"></i> Account Information
             </h2>
-
-            <form id="profile-form" class="space-y-6">
-              <!-- Full Name -->
+            <form id="profile-form" class="space-y-5">
               <div>
-                <label for="fullName" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
-                <input type="text" id="fullName" 
-                       class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all"
-                       required />
+                <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                <input type="text" id="fullName"
+                  class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none
+                         focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all" required />
               </div>
-
-              <!-- Email (Read-only) -->
               <div>
-                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-                <input type="email" id="email" 
-                       class="w-full px-4 py-3 border border-gray-200 rounded-lg bg-gray-50 cursor-not-allowed"
-                       readonly />
-                <p class="text-xs text-gray-500 mt-2">Email cannot be changed</p>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                <input type="email" id="email"
+                  class="w-full px-4 py-3 border border-gray-200 rounded-xl bg-gray-50 cursor-not-allowed" readonly />
+                <p class="text-xs text-gray-400 mt-1">Email cannot be changed.</p>
               </div>
-
-              <!-- Phone -->
               <div>
-                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
                 <input type="tel" id="phone" placeholder="+27 (0) 123 456 7890"
-                       class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all" />
+                  class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none
+                         focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all" />
               </div>
-
-              <!-- Member Since -->
               <div>
                 <label class="block text-sm font-medium text-gray-700 mb-2">Member Since</label>
-                <input type="text" id="memberSince" 
-                       class="w-full px-4 py-3 border border-gray-200 rounded-lg bg-gray-50 cursor-not-allowed"
-                       readonly />
+                <input type="text" id="memberSince"
+                  class="w-full px-4 py-3 border border-gray-200 rounded-xl bg-gray-50 cursor-not-allowed" readonly />
               </div>
-
-              <!-- Save Button -->
-              <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2">
-                <i class="fas fa-save"></i>
-                Save Changes
+              <button type="submit"
+                class="w-full bg-amber-500 hover:bg-amber-600 text-white font-semibold
+                       py-3 rounded-xl transition-all duration-300 flex items-center justify-center gap-2">
+                <i class="fas fa-save"></i> Save Changes
               </button>
             </form>
           </div>
         </div>
 
-        <!-- Stats Card -->
-        <div>
-          <div class="bg-gradient-to-br from-indigo-600 to-indigo-700 rounded-2xl p-8 text-white shadow-lg">
-            <div class="mb-8">
-              <p class="text-indigo-100 text-sm uppercase tracking-wide mb-2">Total Purchases</p>
+        <!-- Stats sidebar -->
+        <div class="space-y-4">
+          <div class="bg-gradient-to-br from-amber-600 to-amber-700 rounded-2xl p-7 text-white shadow-lg">
+            <div class="mb-6">
+              <p class="text-amber-200 text-xs uppercase tracking-widest mb-1">Total Purchases</p>
               <p class="text-4xl font-bold" id="total-purchases">0</p>
             </div>
-            <div class="mb-8 pb-8 border-b border-indigo-400">
-              <p class="text-indigo-100 text-sm uppercase tracking-wide mb-2">Amount Spent</p>
+            <div class="mb-6 pb-6 border-b border-amber-500">
+              <p class="text-amber-200 text-xs uppercase tracking-widest mb-1">Lifetime Spend</p>
               <p class="text-3xl font-bold" id="amount-spent">R 0.00</p>
             </div>
+            <div class="mb-6 pb-6 border-b border-amber-500">
+              <p class="text-amber-200 text-xs uppercase tracking-widest mb-1">Loyalty Points</p>
+              <p class="text-3xl font-bold" id="total-points">0</p>
+            </div>
             <div>
-              <p class="text-indigo-100 text-sm uppercase tracking-wide mb-3">Account Status</p>
-              <div class="flex items-center gap-2">
-                <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                <span class="font-semibold">Active</span>
-              </div>
+              <p class="text-amber-200 text-xs uppercase tracking-widest mb-1">Loyalty Tier</p>
+              <p class="text-xl font-bold" id="loyalty-tier">Bronze 🥉</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm text-center">
+            <p class="text-xs text-gray-400 uppercase tracking-widest mb-1">Login Streak</p>
+            <p class="text-3xl font-bold text-amber-500" id="login-streak">1</p>
+            <p class="text-xs text-gray-500 mt-1">consecutive days 🔥</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
+            <p class="text-xs text-gray-400 uppercase tracking-widest mb-3">Quick Actions</p>
+            <div class="space-y-2">
+              <button id="logout-btn-mobile"
+                class="w-full text-left text-sm font-semibold text-red-600 hover:text-red-700
+                       py-2 px-3 rounded-xl hover:bg-red-50 transition flex items-center gap-2">
+                <i class="fas fa-sign-out-alt w-4"></i> Logout
+              </button>
+              <a href="books.html"
+                class="block text-sm font-semibold text-amber-600 hover:text-amber-700
+                       py-2 px-3 rounded-xl hover:bg-amber-50 transition">
+                <i class="fas fa-book mr-2 w-4"></i> Browse Books
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Purchases Tab -->
+    <!-- ── PURCHASES TAB ─────────────────────────────────── -->
     <div id="purchases-tab" class="tab-content hidden">
-      <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
-        <div class="p-8">
-          <h2 class="font-serif font-bold text-2xl text-gray-900 mb-6 flex items-center gap-2">
-            <i class="fas fa-shopping-bag text-indigo-600"></i>
-            Order History
-          </h2>
 
-          <div id="purchases-list" class="space-y-4">
-            <!-- Purchases will be loaded here -->
-          </div>
+      <!-- Stats row -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8" id="purchase-stats"></div>
 
-          <div id="no-purchases" class="text-center py-12">
-            <i class="fas fa-inbox text-gray-300 text-5xl mb-4 block"></i>
-            <h3 class="text-gray-700 font-semibold text-lg mb-2">No purchases yet</h3>
-            <p class="text-gray-500 mb-6">Start exploring our collection and make your first purchase!</p>
-            <a href="books.html" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300">
-              <i class="fas fa-book mr-2"></i>Browse Books
-            </a>
-          </div>
+      <!-- Filters -->
+      <div class="flex flex-wrap gap-3 mb-6 items-center">
+        <span class="text-sm font-semibold text-gray-600">Filter:</span>
+        <button class="purchase-filter-btn active text-xs font-bold px-4 py-2 rounded-xl
+                 border border-amber-400 bg-amber-50 text-amber-700" data-filter="all">All Orders</button>
+        <button class="purchase-filter-btn text-xs font-bold px-4 py-2 rounded-xl
+                 border border-gray-200 text-gray-600 hover:border-amber-300 transition" data-filter="recent">Last 30 Days</button>
+        <button class="purchase-filter-btn text-xs font-bold px-4 py-2 rounded-xl
+                 border border-gray-200 text-gray-600 hover:border-amber-300 transition" data-filter="highvalue">High Value (R500+)</button>
+        <div class="ml-auto relative">
+          <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
+          <input type="text" id="purchase-search" placeholder="Search orders…"
+            class="pl-8 pr-3 py-2 border border-gray-200 rounded-xl text-xs outline-none
+                   focus:border-amber-400 transition w-48" />
+        </div>
+      </div>
+
+      <div id="purchases-list" class="space-y-4"></div>
+      <div id="no-purchases" class="hidden text-center py-16">
+        <i class="fas fa-shopping-bag text-6xl text-gray-200 mb-4 block"></i>
+        <h3 class="font-serif font-bold text-gray-700 text-xl mb-2">No purchases yet</h3>
+        <p class="text-gray-400 mb-6">Start exploring our collection!</p>
+        <a href="books.html"
+          class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-bold px-8 py-3 rounded-xl transition">
+          <i class="fas fa-book mr-2"></i>Browse Books
+        </a>
+      </div>
+    </div>
+
+    <!-- ── REWARDS TAB ───────────────────────────────────── -->
+    <div id="rewards-tab" class="tab-content hidden">
+      <div id="rewards-widget">
+        <div class="text-center py-12 text-gray-400">
+          <i class="fas fa-spinner fa-spin text-3xl mb-3 block"></i>
+          Loading rewards…
         </div>
       </div>
     </div>
+
+    <!-- ── ACTIVITY TAB ──────────────────────────────────── -->
+    <div id="activity-tab" class="tab-content hidden">
+      <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+        <div class="px-6 py-4 border-b border-gray-100 flex items-center justify-between">
+          <h2 class="font-serif font-bold text-lg text-gray-900 flex items-center gap-2">
+            <i class="fas fa-stream text-indigo-500"></i> Account Activity
+          </h2>
+          <span class="text-xs text-gray-400">Last 100 events</span>
+        </div>
+        <div id="activity-list" class="divide-y divide-gray-50 max-h-[600px] overflow-y-auto p-4">
+          <div class="text-center text-gray-400 py-8">Loading…</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </main>
 
-<!-- ── FOOTER ───────────────────────────────────────────– -->
-<footer class="bg-gray-900 text-gray-300 py-8 px-4 border-t border-gray-800">
-  <div class="max-w-7xl mx-auto text-center text-sm">
-    <p>&copy; 2026 Musa Bookstore. All rights reserved. | <a href="#" class="hover:text-white transition-colors">Privacy Policy</a> • <a href="#" class="hover:text-white transition-colors">Terms of Service</a></p>
-  </div>
-</footer>
-
 <!-- ── Order Detail Modal ────────────────────────────────── -->
-<div id="order-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
-  <div class="bg-white rounded-2xl max-w-2xl w-full max-h-90vh overflow-y-auto p-8">
+<div id="order-modal"
+  class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4"
+  style="display:none;">
+  <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-8 shadow-2xl">
     <div class="flex justify-between items-center mb-6">
       <h2 class="font-serif font-bold text-2xl text-gray-900">Order Details</h2>
-      <button id="modal-close" class="text-gray-500 hover:text-gray-700 text-2xl">
+      <button id="modal-close"
+        class="text-gray-400 hover:text-gray-700 w-9 h-9 flex items-center justify-center
+               rounded-full hover:bg-gray-100 transition text-xl">
         <i class="fas fa-times"></i>
       </button>
     </div>
-
-    <div id="modal-content" class="space-y-6">
-      <!-- Content loaded dynamically -->
-    </div>
+    <div id="modal-content"></div>
   </div>
 </div>
 
+<!-- ── FOOTER ───────────────────────────────────────────── -->
+<footer class="bg-gray-900 text-gray-300 py-8 px-4 border-t border-gray-800">
+  <div class="max-w-7xl mx-auto text-center text-sm">
+    <p>&copy; 2026 Musa Bookstore. All rights reserved. |
+      <a href="#" class="hover:text-white transition-colors">Privacy Policy</a> •
+      <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+    </p>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="js/app.js"></script>
 <script src="js/account.js"></script>
+<script src="js/rewards.js"></script>
 <script>
-  // ─── Check Authentication ───────────────────────────────
-  if (!Account.isLoggedIn()) {
-    window.location.href = 'login.html';
-  }
 
+  // ── Auth guard ────────────────────────────────────────────
+  if (!Account.isLoggedIn()) { window.location.href = 'login.html'; }
   const user = Account.getCurrentUser();
 
-  // ─── Load Profile Data ──────────────────────────────────
-  function loadProfile() {
-    document.getElementById('fullName').value = user.fullName || '';
-    document.getElementById('email').value = user.email || '';
-    document.getElementById('phone').value = user.phone || '';
-    document.getElementById('memberSince').value = new Date(user.createdAt).toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
-    });
-
+  // ── Returning-client banner ───────────────────────────────
+  function initBanner() {
     const purchases = Account.getPurchaseHistory();
-    const totalAmount = purchases.reduce((sum, p) => sum + p.total, 0);
+    const tier      = Account.getLoyaltyTier();
+    if (purchases.length > 0) {
+      document.getElementById('returning-banner').classList.remove('hidden');
+      document.getElementById('banner-title').textContent =
+        `Welcome back, ${user.fullName.split(' ')[0]}! ${tier.icon}`;
+      document.getElementById('banner-sub').textContent =
+        `${Account.getPoints()} loyalty points · ${tier.name} member`;
+    }
+    document.getElementById('welcome-msg').textContent =
+      purchases.length > 0
+        ? `Good to see you again, ${user.fullName.split(' ')[0]}`
+        : 'Your Dashboard';
+  }
+
+  // ── Profile tab ───────────────────────────────────────────
+  function loadProfile() {
+    const purchases = Account.getPurchaseHistory();
+    const spend     = purchases.reduce((s, p) => s + p.total, 0);
+    const tier      = Account.getLoyaltyTier();
+
+    document.getElementById('fullName').value    = user.fullName || '';
+    document.getElementById('email').value       = user.email   || '';
+    document.getElementById('phone').value       = user.phone   || '';
+    document.getElementById('memberSince').value = new Date(user.createdAt)
+      .toLocaleDateString('en-ZA', { year: 'numeric', month: 'long', day: 'numeric' });
 
     document.getElementById('total-purchases').textContent = purchases.length;
-    document.getElementById('amount-spent').textContent = 'R ' + totalAmount.toFixed(2);
+    document.getElementById('amount-spent').textContent    = 'R ' + spend.toFixed(2);
+    document.getElementById('total-points').textContent    = Account.getPoints().toLocaleString();
+    document.getElementById('loyalty-tier').textContent    = `${tier.name} ${tier.icon}`;
+    document.getElementById('login-streak').textContent    = user.loginStreak || 1;
   }
 
-  // ─── Load Purchases List ────────────────────────────────
-  function loadPurchases() {
-    const purchases = Account.getPurchaseHistory();
-    const list = document.getElementById('purchases-list');
-    const noPurchases = document.getElementById('no-purchases');
+  // ── Purchases tab ─────────────────────────────────────────
+  let currentFilter = 'all';
 
-    if (purchases.length === 0) {
+  function loadPurchases(filter, search) {
+    filter = filter || 'all';
+    search = (search || '').toLowerCase().trim();
+
+    const allPurchases = Account.getPurchaseHistory()
+      .sort((a, b) => new Date(b.date) - new Date(a.date));
+    const now = Date.now();
+
+    let filtered = [...allPurchases];
+    if (filter === 'recent')    filtered = filtered.filter(p => now - new Date(p.date) <= 30 * 86400000);
+    if (filter === 'highvalue') filtered = filtered.filter(p => p.total >= 500);
+    if (search) {
+      filtered = filtered.filter(p =>
+        p.orderNumber.toLowerCase().includes(search) ||
+        (p.items || []).some(i => i.title && i.title.toLowerCase().includes(search))
+      );
+    }
+
+    // Stats row
+    const totalSpend  = allPurchases.reduce((s, p) => s + p.total, 0);
+    const totalPts    = allPurchases.reduce((s, p) => s + (p.pointsEarned || 0), 0);
+    const totalBooks  = allPurchases.reduce((s, p) =>
+      s + (p.items || []).reduce((x, i) => x + (i.qty || 1), 0), 0);
+
+    document.getElementById('purchase-stats').innerHTML = [
+      { label: 'Total Orders', value: allPurchases.length,          icon: 'fa-shopping-bag', color: 'text-indigo-600' },
+      { label: 'Total Books',  value: totalBooks + ' books',        icon: 'fa-book',         color: 'text-amber-600'  },
+      { label: 'Total Spend',  value: 'R ' + totalSpend.toFixed(2), icon: 'fa-wallet',       color: 'text-green-600'  },
+      { label: 'Points Earned',value: totalPts.toLocaleString(),    icon: 'fa-star',         color: 'text-yellow-500' },
+    ].map(s => `
+      <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 text-center">
+        <i class="fas ${s.icon} ${s.color} text-2xl mb-2 block"></i>
+        <p class="font-serif font-bold text-gray-900 text-xl">${s.value}</p>
+        <p class="text-xs text-gray-400 mt-1">${s.label}</p>
+      </div>`).join('');
+
+    const list        = document.getElementById('purchases-list');
+    const emptyState  = document.getElementById('no-purchases');
+
+    if (filtered.length === 0) {
       list.classList.add('hidden');
-      noPurchases.classList.remove('hidden');
+      emptyState.classList.remove('hidden');
       return;
     }
-
+    emptyState.classList.add('hidden');
     list.classList.remove('hidden');
-    noPurchases.classList.add('hidden');
-    list.innerHTML = '';
 
-    purchases.sort((a, b) => new Date(b.date) - new Date(a.date)).forEach(purchase => {
-      const date = new Date(purchase.date).toLocaleDateString('en-US', { 
-        year: 'numeric', 
-        month: 'short', 
-        day: 'numeric' 
-      });
-
-      const html = `
-        <div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-all">
-          <div class="flex items-center justify-between mb-4">
-            <div class="flex-1">
-              <p class="text-sm text-gray-500">${date}</p>
-              <p class="font-semibold text-gray-900">Order ${purchase.orderNumber}</p>
+    list.innerHTML = filtered.map(p => {
+      const date         = new Date(p.date).toLocaleDateString('en-ZA',
+        { year: 'numeric', month: 'short', day: 'numeric' });
+      const previewItems = (p.items || []).slice(0, 2);
+      return `
+        <div class="bg-white border border-gray-100 rounded-2xl shadow-sm p-6 hover:shadow-md transition">
+          <div class="flex items-start justify-between flex-wrap gap-4 mb-4">
+            <div>
+              <p class="text-xs text-gray-400 mb-0.5">${date}</p>
+              <p class="font-serif font-bold text-gray-900">${p.orderNumber}</p>
+              <p class="text-xs text-gray-500 mt-0.5">${(p.items || []).length} item(s)</p>
             </div>
             <div class="text-right">
-              <p class="font-bold text-lg text-gray-900">R ${purchase.total.toFixed(2)}</p>
-              <span class="inline-block bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full mt-1">
-                <i class="fas fa-check-circle mr-1"></i>${purchase.status}
+              <p class="font-bold text-xl text-gray-900">R ${p.total.toFixed(2)}</p>
+              <span class="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full mt-1">
+                <i class="fas fa-check-circle mr-1"></i>${p.status || 'Completed'}
               </span>
+              ${p.pointsEarned
+                ? `<p class="text-xs text-amber-600 mt-1 font-semibold">+${p.pointsEarned} pts earned</p>`
+                : ''}
             </div>
           </div>
-
-          <div class="border-t border-gray-100 pt-4 mb-4">
-            <p class="text-sm text-gray-600 mb-2"><strong>${purchase.items.length}</strong> item(s)</p>
-            <div class="space-y-1">
-              ${purchase.items.slice(0, 2).map(item => `
-                <p class="text-sm text-gray-700">
-                  <i class="fas fa-book text-indigo-500 mr-2"></i>
-                  ${item.title} <span class="text-gray-500">x${item.qty}</span>
-                </p>
-              `).join('')}
-              ${purchase.items.length > 2 ? `<p class="text-sm text-gray-500">+ ${purchase.items.length - 2} more item(s)</p>` : ''}
-            </div>
+          <div class="space-y-1 border-t border-gray-50 pt-4 mb-4">
+            ${previewItems.map(i => `
+              <p class="text-sm text-gray-700">
+                <i class="fas fa-book text-amber-400 mr-2"></i>${i.title}
+                <span class="text-gray-400">×${i.qty || 1}</span>
+              </p>`).join('')}
+            ${(p.items || []).length > 2
+              ? `<p class="text-xs text-gray-400">+${(p.items || []).length - 2} more item(s)</p>` : ''}
           </div>
-
-          <button class="view-order-btn w-full text-center text-indigo-600 hover:text-indigo-700 font-semibold py-2 rounded-lg hover:bg-indigo-50 transition-all" data-order-id="${purchase.id}">
-            View Full Order <i class="fas fa-arrow-right ml-2"></i>
+          <button class="view-order-btn w-full text-center text-amber-600 hover:text-amber-700
+                   font-semibold py-2 rounded-xl hover:bg-amber-50 transition text-sm"
+                   data-order-id="${p.id}">
+            View Full Order <i class="fas fa-arrow-right ml-1"></i>
           </button>
-        </div>
-      `;
+        </div>`;
+    }).join('');
 
-      list.innerHTML += html;
-    });
-
-    // Attach event listeners
-    document.querySelectorAll('.view-order-btn').forEach(btn => {
-      btn.addEventListener('click', showOrderDetail);
-    });
+    document.querySelectorAll('.view-order-btn').forEach(btn =>
+      btn.addEventListener('click', showOrderModal));
   }
 
-  // ─── Show Order Detail Modal ────────────────────────────
-  function showOrderDetail(e) {
-    const orderId = e.currentTarget.dataset.orderId;
-    const purchase = Account.getPurchase(orderId);
+  function showOrderModal(e) {
+    const p = Account.getPurchase(e.currentTarget.dataset.orderId);
+    if (!p) return;
+    const date = new Date(p.date).toLocaleString('en-ZA',
+      { dateStyle: 'medium', timeStyle: 'short' });
 
-    if (!purchase) return;
-
-    const modal = document.getElementById('order-modal');
-    const content = document.getElementById('modal-content');
-    const date = new Date(purchase.date).toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit'
-    });
-
-    let html = `
-      <div class="space-y-4">
-        <div class="grid grid-cols-2 gap-4 pb-4 border-b border-gray-200">
-          <div>
-            <p class="text-sm text-gray-600">Order Number</p>
-            <p class="font-semibold text-gray-900">${purchase.orderNumber}</p>
-          </div>
-          <div>
-            <p class="text-sm text-gray-600">Order Date</p>
-            <p class="font-semibold text-gray-900">${date}</p>
-          </div>
-          <div>
-            <p class="text-sm text-gray-600">Status</p>
-            <p class="font-semibold text-green-600"><i class="fas fa-check-circle mr-1"></i>${purchase.status}</p>
-          </div>
-          <div>
-            <p class="text-sm text-gray-600">Total Amount</p>
-            <p class="font-bold text-lg text-gray-900">R ${purchase.total.toFixed(2)}</p>
-          </div>
-        </div>
-
+    document.getElementById('modal-content').innerHTML = `
+      <div class="grid grid-cols-2 gap-4 pb-5 border-b border-gray-100 mb-5">
         <div>
-          <h3 class="font-semibold text-gray-900 mb-3">Items</h3>
-          <div class="space-y-3">
-            ${purchase.items.map(item => `
-              <div class="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
-                <div>
-                  <p class="font-semibold text-gray-900">${item.title}</p>
-                  <p class="text-sm text-gray-600">${item.author}</p>
-                </div>
-                <div class="text-right">
-                  <p class="text-sm text-gray-600">Qty: ${item.qty}</p>
-                  <p class="font-semibold text-gray-900">R ${(item.price * item.qty).toFixed(2)}</p>
-                </div>
-              </div>
-            `).join('')}
-          </div>
+          <p class="text-xs text-gray-500 mb-0.5">Order</p>
+          <p class="font-semibold text-gray-900 text-sm">${p.orderNumber}</p>
         </div>
-
-        ${purchase.shippingAddress ? `
-          <div class="pb-4 border-b border-gray-200">
-            <h3 class="font-semibold text-gray-900 mb-2">Shipping Address</h3>
-            <p class="text-gray-700">${purchase.shippingAddress}</p>
-          </div>
-        ` : ''}
-
-        <div class="bg-indigo-50 rounded-lg p-4">
-          <div class="flex items-center justify-between">
-            <p class="text-gray-700">Subtotal</p>
-            <p class="text-gray-900">R ${purchase.total.toFixed(2)}</p>
-          </div>
-          ${purchase.discount > 0 ? `
-            <div class="flex items-center justify-between text-green-600">
-              <p>Discount</p>
-              <p>-R ${purchase.discount.toFixed(2)}</p>
-            </div>
-          ` : ''}
-          <div class="border-t border-indigo-200 mt-3 pt-3 flex items-center justify-between font-bold text-lg">
-            <p class="text-gray-900">Total</p>
-            <p class="text-indigo-600">R ${purchase.total.toFixed(2)}</p>
-          </div>
+        <div>
+          <p class="text-xs text-gray-500 mb-0.5">Date</p>
+          <p class="font-semibold text-gray-900 text-sm">${date}</p>
+        </div>
+        <div>
+          <p class="text-xs text-gray-500 mb-0.5">Status</p>
+          <p class="font-semibold text-green-600 text-sm">
+            <i class="fas fa-check-circle mr-1"></i>${p.status || 'Completed'}
+          </p>
+        </div>
+        <div>
+          <p class="text-xs text-gray-500 mb-0.5">Points Earned</p>
+          <p class="font-semibold text-amber-600 text-sm">+${p.pointsEarned || 0} pts</p>
         </div>
       </div>
-    `;
+      <div class="space-y-3 mb-5">
+        <h3 class="font-semibold text-gray-900 text-sm">Items Ordered</h3>
+        ${(p.items || []).map(i => `
+          <div class="flex items-center justify-between bg-gray-50 p-3 rounded-xl">
+            <div>
+              <p class="font-semibold text-gray-900 text-sm">${i.title}</p>
+              <p class="text-xs text-gray-500">${i.author || ''}</p>
+            </div>
+            <div class="text-right">
+              <p class="text-xs text-gray-500">×${i.qty || 1}</p>
+              <p class="font-bold text-gray-900 text-sm">R ${((i.price || 0) * (i.qty || 1)).toFixed(2)}</p>
+            </div>
+          </div>`).join('')}
+      </div>
+      ${p.shippingAddress ? `
+      <div class="pb-4 mb-4 border-b border-gray-100">
+        <p class="text-xs text-gray-500 mb-1">Shipped To</p>
+        <p class="text-sm text-gray-700">${p.shippingAddress}</p>
+      </div>` : ''}
+      <div class="bg-amber-50 rounded-xl p-4">
+        ${p.discount > 0 ? `
+        <div class="flex justify-between text-sm text-green-600 mb-2">
+          <span>Discount</span><span>-R ${p.discount.toFixed(2)}</span>
+        </div>` : ''}
+        <div class="flex justify-between font-bold text-lg border-t border-amber-200 pt-3 mt-1">
+          <span class="text-gray-900">Total Paid</span>
+          <span class="text-amber-600">R ${p.total.toFixed(2)}</span>
+        </div>
+      </div>`;
 
-    content.innerHTML = html;
-    modal.classList.remove('hidden');
+    document.getElementById('order-modal').style.display = 'flex';
   }
 
-  // ─── Close Order Modal ──────────────────────────────────
-  document.getElementById('modal-close').addEventListener('click', () => {
-    document.getElementById('order-modal').classList.add('hidden');
-  });
+  // ── Activity tab ──────────────────────────────────────────
+  function loadActivity() {
+    const log = Account.getActivityLog();
+    const typeIcons = {
+      purchase: '🛒', points: '⭐', redeem: '🎁', coupon: '🎟️',
+      streak: '🔥', profile: '📝', account: '🎉', login: '👤'
+    };
+    document.getElementById('activity-list').innerHTML = log.length
+      ? log.map(a => {
+          const d = new Date(a.date).toLocaleString('en-ZA',
+            { dateStyle: 'short', timeStyle: 'short' });
+          return `
+            <div class="flex items-start gap-4 py-4 px-2">
+              <span class="text-xl flex-shrink-0 mt-0.5">${typeIcons[a.type] || '📌'}</span>
+              <div class="flex-1 min-w-0">
+                <p class="text-sm text-gray-700">${a.description}</p>
+                <p class="text-xs text-gray-400 mt-0.5">${d}</p>
+              </div>
+            </div>`;
+        }).join('')
+      : '<div class="text-center text-gray-400 py-10">No activity logged yet.</div>';
+  }
 
-  document.getElementById('order-modal').addEventListener('click', (e) => {
-    if (e.target.id === 'order-modal') {
-      e.target.classList.add('hidden');
-    }
-  });
-
-  // ─── Tab Switching ──────────────────────────────────────
+  // ── Tabs ──────────────────────────────────────────────────
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      // Remove active state
       document.querySelectorAll('.tab-btn').forEach(b => {
-        b.classList.remove('active', 'text-indigo-600', 'border-indigo-600');
-        b.classList.add('text-gray-600');
+        b.classList.remove('active', 'text-amber-600', 'border-b-2', 'border-amber-600');
+        b.classList.add('text-gray-500');
       });
       document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
 
-      // Add active state to clicked btn
-      btn.classList.add('active', 'text-indigo-600', 'border-indigo-600');
-      btn.classList.remove('text-gray-600');
-      
+      btn.classList.add('active', 'text-amber-600', 'border-b-2', 'border-amber-600');
+      btn.classList.remove('text-gray-500');
+
       const tabId = btn.dataset.tab + '-tab';
       document.getElementById(tabId).classList.remove('hidden');
+
+      if (btn.dataset.tab === 'rewards')   Rewards.renderWidget('rewards-widget');
+      if (btn.dataset.tab === 'activity')  loadActivity();
+      if (btn.dataset.tab === 'purchases') loadPurchases(currentFilter, document.getElementById('purchase-search').value);
     });
   });
 
-  // ─── Profile Form Handler ───────────────────────────────
-  document.getElementById('profile-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const fullName = document.getElementById('fullName').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-
-    const result = Account.updateProfile(fullName, phone);
-    
-    if (result.success) {
-      showToast(result.message, 'success');
-      loadProfile();
-    } else {
-      showToast(result.message, 'error');
-    }
+  // ── Purchase filters ──────────────────────────────────────
+  document.querySelectorAll('.purchase-filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.purchase-filter-btn').forEach(b => {
+        b.classList.remove('active', 'bg-amber-50', 'text-amber-700', 'border-amber-400');
+        b.classList.add('text-gray-600', 'border-gray-200');
+      });
+      btn.classList.add('active', 'bg-amber-50', 'text-amber-700', 'border-amber-400');
+      btn.classList.remove('text-gray-600', 'border-gray-200');
+      currentFilter = btn.dataset.filter;
+      loadPurchases(currentFilter, document.getElementById('purchase-search').value);
+    });
   });
 
-  // ─── Logout Handler ─────────────────────────────────────
-  document.getElementById('logout-btn').addEventListener('click', () => {
+  document.getElementById('purchase-search').addEventListener('input', function () {
+    loadPurchases(currentFilter, this.value);
+  });
+
+  // ── Profile form ──────────────────────────────────────────
+  document.getElementById('profile-form').addEventListener('submit', e => {
+    e.preventDefault();
+    const result = Account.updateProfile(
+      document.getElementById('fullName').value.trim(),
+      document.getElementById('phone').value.trim()
+    );
+    showToast(result.message, result.success ? 'success' : 'error');
+    if (result.success) loadProfile();
+  });
+
+  // ── Logout ────────────────────────────────────────────────
+  function doLogout() {
     if (confirm('Are you sure you want to log out?')) {
       Account.logout();
-      showToast('Logged out successfully!', 'success');
-      setTimeout(() => {
-        window.location.href = 'login.html';
-      }, 1500);
+      window.location.href = 'login.html';
     }
+  }
+  document.getElementById('logout-btn').addEventListener('click', doLogout);
+  document.getElementById('logout-btn').classList.remove('hidden');
+  document.getElementById('logout-btn-mobile').addEventListener('click', doLogout);
+
+  // ── Order modal close ─────────────────────────────────────
+  document.getElementById('modal-close').addEventListener('click', () => {
+    document.getElementById('order-modal').style.display = 'none';
+  });
+  document.getElementById('order-modal').addEventListener('click', e => {
+    if (e.target.id === 'order-modal') e.target.style.display = 'none';
   });
 
-  // ─── Theme Toggle ───────────────────────────────────────
+  // ── Theme & mobile menu ───────────────────────────────────
   document.getElementById('theme-toggle').addEventListener('click', () => {
     const isDark = document.documentElement.classList.toggle('dark');
     localStorage.setItem('musaTheme', isDark ? 'dark' : 'light');
+    document.getElementById('theme-icon').className = isDark ? 'fas fa-sun' : 'fas fa-moon';
   });
+  const isDarkOnLoad = document.documentElement.classList.contains('dark');
+  document.getElementById('theme-icon').className = isDarkOnLoad ? 'fas fa-sun' : 'fas fa-moon';
 
-  // ─── Mobile Menu Toggle ─────────────────────────────────
   document.getElementById('mobile-toggle').addEventListener('click', () => {
     document.getElementById('mobile-menu').classList.toggle('hidden');
   });
 
-  // ─── Toast Notification ─────────────────────────────────
-  function showToast(message, type = 'info') {
-    const container = document.getElementById('toast-container');
-    const toast = document.createElement('div');
-    const bgColor = type === 'success' ? 'bg-green-500' : type === 'error' ? 'bg-red-500' : 'bg-blue-500';
-    
-    toast.className = `${bgColor} text-white px-6 py-3 rounded-lg shadow-lg mb-3 flex items-center gap-3 animate-slideIn`;
-    toast.innerHTML = `
-      <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
-      <span>${message}</span>
-    `;
-    
-    container.appendChild(toast);
-    setTimeout(() => toast.remove(), 4000);
-  }
+  // ── Cart badge ────────────────────────────────────────────
+  if (typeof Cart !== 'undefined') Cart.updateBadge();
 
-  // ─── Initialize ──────────────────────────────────────────
+  // ── Initialise ────────────────────────────────────────────
+  initBanner();
   loadProfile();
-  loadPurchases();
+  loadPurchases('all', '');
+
 </script>
-
-<style>
-  @keyframes slideIn {
-    from { transform: translateY(-20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-  }
-  .animate-slideIn { animation: slideIn 0.3s ease-out; }
-
-  .tab-btn.active {
-    border-bottom: 2px solid;
-  }
-</style>
-
 </body>
 </html>
