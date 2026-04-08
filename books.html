@@ -52,11 +52,9 @@
 <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2">
     <div class="flex items-center justify-center gap-8">
-      <!-- Logo -->
       <a href="index.html" class="flex items-center gap-2 flex-shrink-0">
         <img src="Logo2.png" alt="Musa Bookstore" class="h-28 w-auto object-contain" />
       </a>
-      <!-- Navigation Links -->
       <div class="flex items-center justify-center gap-4">
         <a href="index.html" class="nav-link text-gray-700 hover:text-indigo-600 font-medium text-xs transition-colors">Home</a>
         <span class="text-gray-300">•</span>
@@ -66,7 +64,6 @@
         <span class="text-gray-300">•</span>
         <a href="about.html" class="nav-link text-gray-700 hover:text-indigo-600 font-medium text-xs transition-colors">About</a>
       </div>
-      <!-- Utility Icons -->
       <div class="flex items-center gap-1">
         <button id="search-toggle" class="p-2.5 text-gray-500 hover:text-sky-600 hover:bg-sky-50 rounded-xl transition-all">
           <i class="fas fa-search"></i>
@@ -137,8 +134,21 @@
           <div class="space-y-2" id="category-filters">
             <label class="flex items-center gap-2.5 cursor-pointer group">
               <input type="radio" name="category" value="all" checked class="filter-check accent-indigo-600" />
-              <span class="text-sm text-gray-600 group-hover:text-indigo-600 transition-colors">All Guides</span>
+              <span class="text-sm text-gray-600 group-hover:text-indigo-600 transition-colors">All Books</span>
             </label>
+            <label class="flex items-center gap-2.5 cursor-pointer group">
+              <input type="radio" name="category" value="Religious" class="filter-check accent-indigo-600" />
+              <span class="text-sm text-gray-600 group-hover:text-indigo-600 transition-colors flex items-center gap-1.5">
+                <i class="fas fa-place-of-worship text-amber-600 text-xs"></i>Religious
+              </span>
+            </label>
+            <label class="flex items-center gap-2.5 cursor-pointer group">
+              <input type="radio" name="category" value="Military Author" class="filter-check accent-indigo-600" />
+              <span class="text-sm text-gray-600 group-hover:text-indigo-600 transition-colors flex items-center gap-1.5">
+                <i class="fas fa-shield-alt text-red-700 text-xs"></i>Military Authors
+              </span>
+            </label>
+            <div class="border-t border-gray-100 my-1"></div>
             <label class="flex items-center gap-2.5 cursor-pointer group">
               <input type="radio" name="category" value="Fiction" class="filter-check accent-indigo-600" />
               <span class="text-sm text-gray-600 group-hover:text-indigo-600 transition-colors">Fiction</span>
@@ -288,10 +298,9 @@
           <p class="text-gray-500 text-sm max-w-xl">Big savings on pre-owned copies — all inspected and graded by our team. Same great stories, friendlier prices.</p>
         </div>
       </div>
-
+ 
       <!-- Condition Key & Filters Row -->
       <div class="space-y-5 mb-8">
-        <!-- Condition Legend -->
         <div class="flex items-center gap-4 flex-wrap">
           <span class="text-xs text-gray-500 font-semibold uppercase tracking-wide">Condition:</span>
           <span class="flex items-center gap-1.5 text-xs font-semibold text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full border border-emerald-200">
@@ -304,8 +313,7 @@
             <span class="w-2 h-2 bg-amber-500 rounded-full"></span> Good — clearly read, fully intact
           </span>
         </div>
-
-        <!-- Sort & Filter Bar -->
+ 
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white bg-opacity-80 rounded-2xl px-5 py-3.5 shadow-sm border border-amber-100">
           <p class="text-sm text-gray-500"><span id="used-results-count" class="font-bold text-gray-900">10</span> pre-owned books available</p>
           <div class="flex items-center gap-2 flex-wrap">
@@ -317,8 +325,7 @@
             <button class="used-sort-btn text-xs font-semibold px-3 py-1.5 rounded-lg border border-amber-200 text-gray-600 transition-all" data-sort="rating">Rating ↓</button>
           </div>
         </div>
-
-        <!-- Quick Filters -->
+ 
         <div class="flex flex-wrap gap-2">
           <button class="used-condition-filter text-xs font-semibold px-4 py-2 rounded-lg border border-emerald-300 text-emerald-700 bg-emerald-50 hover:bg-emerald-100 transition-all" data-condition="Like New">
             <i class="fas fa-star mr-1"></i> Like New
@@ -334,11 +341,9 @@
           </button>
         </div>
       </div>
-
-      <!-- Used Books Grid -->
+ 
       <div id="used-books-grid" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4"></div>
-
-      <!-- Empty State -->
+ 
       <div id="used-empty-state" class="hidden text-center py-20">
         <div class="text-6xl mb-4">📭</div>
         <h3 class="font-serif font-bold text-gray-800 text-xl mb-2">No pre-owned books found</h3>
@@ -347,15 +352,13 @@
           Clear Filters
         </button>
       </div>
-
-      <!-- Load More -->
+ 
       <div class="text-center mt-10" id="used-load-more-wrap">
         <button id="used-load-more" class="bg-white hover:bg-amber-50 text-amber-600 font-semibold px-8 py-3 rounded-2xl border border-amber-200 hover:border-amber-400 transition-all shadow-sm text-sm">
           <i class="fas fa-plus mr-2"></i>Load More Pre-Owned Books
         </button>
       </div>
  
-      <!-- Sell your books CTA -->
       <div class="mt-10 bg-white bg-opacity-80 border-2 border-amber-200 rounded-2xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div class="flex items-center gap-4">
           <div class="w-12 h-12 bg-amber-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow">
@@ -400,6 +403,8 @@
       <div>
         <h4 class="font-serif font-semibold text-white mb-4">Guide</h4>
         <ul class="space-y-2.5 text-sm">
+          <li><a href="books.html?category=Religious" class="hover:text-indigo-400 transition-colors">Religious</a></li>
+          <li><a href="books.html?category=Military+Author" class="hover:text-indigo-400 transition-colors">Military Authors</a></li>
           <li><a href="books.html?category=Fiction" class="hover:text-indigo-400 transition-colors">Fiction</a></li>
           <li><a href="books.html?category=Mystery" class="hover:text-indigo-400 transition-colors">Mystery</a></li>
           <li><a href="books.html?category=Biography" class="hover:text-indigo-400 transition-colors">Biography</a></li>
@@ -493,29 +498,22 @@ $(function () {
     }
   }
  
-  // ── USED BOOKS FILTERING & SORTING ──────────────────────
+  // ── USED BOOKS ──────────────────────────────────────────
   let usedCurrentSort = 'default';
   let usedVisibleCount = 12;
   const USED_PAGE_SIZE = 8;
   let usedConditionFilter = null;
-
-  function getUsedFilters() {
-    return {
-      condition: usedConditionFilter
-    };
-  }
-
+ 
   function filterUsedBooks() {
-    const f = getUsedFilters();
     let books = [...USED_BOOKS_DATA];
-    if (f.condition) books = books.filter(b => b.condition === f.condition);
+    if (usedConditionFilter) books = books.filter(b => b.condition === usedConditionFilter);
     if (usedCurrentSort === 'price-asc')  books.sort((a,b) => a.price - b.price);
     if (usedCurrentSort === 'price-desc') books.sort((a,b) => b.price - a.price);
     if (usedCurrentSort === 'saving')     books.sort((a,b) => (b.originalPrice - b.price) - (a.originalPrice - a.price));
     if (usedCurrentSort === 'rating')     books.sort((a,b) => b.rating - a.rating);
     return books;
   }
-
+ 
   function renderUsedBooksFiltered() {
     const books   = filterUsedBooks();
     const visible = books.slice(0, usedVisibleCount);
@@ -530,8 +528,7 @@ $(function () {
       $('#used-load-more-wrap').toggleClass('hidden', usedVisibleCount >= books.length);
     }
   }
-
-  // Used books condition filter buttons
+ 
   $(document).on('click', '.used-condition-filter', function () {
     const condition = $(this).data('condition');
     if (usedConditionFilter === condition) {
@@ -545,8 +542,7 @@ $(function () {
     usedVisibleCount = USED_PAGE_SIZE;
     renderUsedBooksFiltered();
   });
-
-  // Used books sort buttons
+ 
   $(document).on('click', '.used-sort-btn', function () {
     $('.used-sort-btn').removeClass('active').addClass('text-gray-600');
     $(this).addClass('active').removeClass('text-gray-600');
@@ -554,15 +550,13 @@ $(function () {
     usedVisibleCount = USED_PAGE_SIZE;
     renderUsedBooksFiltered();
   });
-
-  // Used books load more
+ 
   $('#used-load-more').on('click', function () {
     usedVisibleCount += USED_PAGE_SIZE;
     renderUsedBooksFiltered();
     $('html, body').animate({ scrollTop: $('#used-books-grid').offset().top - 100 }, 400);
   });
-
-  // Used books reset filters
+ 
   function resetUsedFilters() {
     usedConditionFilter = null;
     usedCurrentSort = 'default';
@@ -572,12 +566,8 @@ $(function () {
     $('.used-sort-btn[data-sort="default"]').addClass('active').removeClass('text-gray-600');
     renderUsedBooksFiltered();
   }
-
+ 
   $('#used-reset-filters, #used-reset-filters-empty').on('click', resetUsedFilters);
-
-  function renderUsedBooks() {
-    renderUsedBooksFiltered();
-  }
  
   $('#price-range').on('input', function () {
     $('#price-label').text('Up to R' + $(this).val());
@@ -630,14 +620,8 @@ $(function () {
   usedVisibleCount = USED_PAGE_SIZE;
   visibleCount = PAGE_SIZE;
   renderBooks();
-  renderUsedBooks();
+  renderUsedBooksFiltered();
  
-  $(document).on('click', '.sort-btn', function () {
-    $('.sort-btn').css({ background:'', color:'#4b5563', borderColor:'#e5e7eb' });
-    $(this).css({ background:'#6366f1', color:'#fff', borderColor:'#6366f1' });
-  });
- 
-  // Scroll to used section if hash present
   if (window.location.hash === '#used') {
     setTimeout(() => {
       const $el = $('#used');
@@ -647,4 +631,4 @@ $(function () {
 });
 </script>
 </body>
-</html
+</html>
