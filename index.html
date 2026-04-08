@@ -29,7 +29,7 @@
     <div class="flex items-center bg-white bg-opacity-10 border border-white border-opacity-20 rounded-2xl px-4 py-3 mb-6">
       <i class="fas fa-search text-gray-300 text-lg mr-3"></i>
       <input id="search-input" type="text" placeholder="Search books, authors, genres…"
-             class="flex-1 bg-transparent text-white placeholder-gray-400 text-lg outline-none" />
+             class="flex-1 bg-transparent placeholder-gray-400 text-lg outline-none" style="color: var(--text-primary);" />
       <button id="search-close" class="text-gray-400 hover:text-white ml-3 text-lg transition-colors">
         <i class="fas fa-times"></i>
       </button>
@@ -42,7 +42,7 @@
 <div id="book-modal" class="modal-overlay">
   <div class="modal-box">
     <div class="flex justify-end p-4 pb-0">
-      <button id="modal-close" class="w-9 h-9 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center text-gray-500 transition-colors">
+      <button id="modal-close" class="w-9 h-9 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center text-gray-500 transition-colors" style="background-color: var(--bg-tertiary); color: var(--text-secondary);">
         <i class="fas fa-times"></i>
       </button>
     </div>
@@ -52,7 +52,7 @@
  
 <!-- ── NAVBAR ───────────────────────────────────────────── -->
 <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-0.5">
     <div class="flex items-center justify-center gap-8">
       <!-- Logo -->
       <a href="index.html" class="flex items-center gap-2 flex-shrink-0">
@@ -100,10 +100,14 @@
 </nav>
  
 <!-- ── HERO ─────────────────────────────────────────────── -->
-<section class="hero-bg pt-24 pb-16 md:pb-0 md:min-h-screen flex items-center">
+<section class="hero-bg pt-32 pb-16 md:pb-0 md:min-h-screen flex items-center">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full">
     <div class="flex flex-col md:flex-row items-center gap-12">
-      <div class="flex-1 text-center md:text-left relative z-10">
+      <div class="flex-1 flex justify-center items-center relative py-12 md:py-0 order-2 md:order-1" style="min-height:340px;">
+        <!-- Logo Display -->
+        <img src="Logo2.png" alt="Musa Bookstore Logo" class="w-full max-w-lg md:max-w-2xl h-auto object-contain drop-shadow-lg" />
+      </div>
+      <div class="flex-1 text-center md:text-left relative z-10 order-1 md:order-2">
         <h1 class="font-serif font-bold text-5xl sm:text-6xl lg:text-7xl text-white leading-[1.1] mb-6">
           Curated<br/>
           <span class="gradient-text">Collections</span><br/>
@@ -124,13 +128,6 @@
           <div class="border-l border-amber-600 pl-6">Complimentary Delivery<br/><span class="text-xs">over R500</span></div>
           <div class="border-l border-amber-600 pl-6">Curated Editions<br/><span class="text-xs">hand-selected</span></div>
           <div class="border-l border-amber-600 pl-6">30-Day Guarantee<br/><span class="text-xs">hassle-free</span></div>
-        </div>
-      </div>
-      <div class="flex-1 flex justify-center items-center relative py-12 md:py-0" style="min-height:340px;">
-        <!-- Elegant typography-focused alternative instead of floating books -->
-        <div class="text-center opacity-60">
-          <i class="fas fa-sparkles text-5xl text-amber-700 mb-4"></i>
-          <p class="font-serif text-sm italic text-amber-600 tracking-widest">Collections curated with intention</p>
         </div>
       </div>
     </div>
@@ -360,52 +357,52 @@
         </div>
       </div>
       <div>
-        <h4 class="font-serif font-semibold text-white mb-4">Quick Links</h4>
+        <h4 class="font-serif font-semibold text-gray-900 dark:text-white mb-4">Quick Links</h4>
         <ul class="space-y-2.5 text-sm">
-          <li><a href="index.html" class="hover:text-indigo-400 transition-colors">Home</a></li>
-          <li><a href="books.html" class="hover:text-indigo-400 transition-colors">Browse Books</a></li>
-          <li><a href="books.html#used" class="hover:text-amber-400 transition-colors"><i class="fas fa-recycle text-xs mr-1"></i>Used Books</a></li>
-          <li><a href="cart.html" class="hover:text-indigo-400 transition-colors">Shopping Cart</a></li>
+          <li><a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Home</a></li>
+          <li><a href="books.html" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Browse Books</a></li>
+          <li><a href="books.html#used" class="text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"><i class="fas fa-recycle text-xs mr-1"></i>Used Books</a></li>
+          <li><a href="cart.html" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Shopping Cart</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="font-serif font-semibold text-white mb-4">Guide</h4>
+        <h4 class="font-serif font-semibold text-gray-900 dark:text-white mb-4">Guide</h4>
         <ul class="space-y-2.5 text-sm">
-          <li><a href="books.html?category=Fiction" class="hover:text-indigo-400 transition-colors">Fiction</a></li>
-          <li><a href="books.html?category=Science+Fiction" class="hover:text-indigo-400 transition-colors">Science Fiction</a></li>
-          <li><a href="books.html?category=Mystery" class="hover:text-indigo-400 transition-colors">Mystery & Thriller</a></li>
-          <li><a href="books.html?category=Biography" class="hover:text-indigo-400 transition-colors">Biography</a></li>
-          <li><a href="books.html?category=Self-Help" class="hover:text-indigo-400 transition-colors">Self-Help</a></li>
+          <li><a href="books.html?category=Fiction" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Fiction</a></li>
+          <li><a href="books.html?category=Science+Fiction" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Science Fiction</a></li>
+          <li><a href="books.html?category=Mystery" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Mystery & Thriller</a></li>
+          <li><a href="books.html?category=Biography" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Biography</a></li>
+          <li><a href="books.html?category=Self-Help" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Self-Help</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="font-serif font-semibold text-white mb-4">Contact Us</h4>
+        <h4 class="font-serif font-semibold text-gray-900 dark:text-white mb-4">Contact Us</h4>
         <ul class="space-y-3 text-sm">
           <li class="flex items-start gap-2">
-            <i class="fas fa-map-marker-alt mt-0.5 text-indigo-400 text-xs w-4"></i>
-            <span>123 Library Lane, Booktown, BK 10001</span>
+            <i class="fas fa-map-marker-alt mt-0.5 text-indigo-600 dark:text-indigo-400 text-xs w-4"></i>
+            <span class="text-gray-700 dark:text-gray-300">123 Library Lane, Booktown, BK 10001</span>
           </li>
           <li class="flex items-center gap-2">
-            <i class="fas fa-phone text-indigo-400 text-xs w-4"></i>
-            <a href="tel:+27551234567" class="hover:text-indigo-400 transition-colors">+27 55 123 4567</a>
+            <i class="fas fa-phone text-indigo-600 dark:text-indigo-400 text-xs w-4"></i>
+            <a href="tel:+27551234567" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">+27 55 123 4567</a>
           </li>
           <li class="flex items-center gap-2">
-            <i class="fas fa-envelope text-indigo-400 text-xs w-4"></i>
-            <a href="mailto:hello@musabooks.com" class="hover:text-indigo-400 transition-colors">hello@musabooks.com</a>
+            <i class="fas fa-envelope text-indigo-600 dark:text-indigo-400 text-xs w-4"></i>
+            <a href="mailto:hello@musabooks.com" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">hello@musabooks.com</a>
           </li>
           <li class="flex items-center gap-2">
-            <i class="fas fa-clock text-indigo-400 text-xs w-4"></i>
-            <span>Mon–Sat: 9:00 AM – 6:00 PM</span>
+            <i class="fas fa-clock text-indigo-600 dark:text-indigo-400 text-xs w-4"></i>
+            <span class="text-gray-700 dark:text-gray-300">Mon–Sat: 9:00 AM – 6:00 PM</span>
           </li>
         </ul>
       </div>
     </div>
-    <div class="border-t border-gray-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-500">
+    <div class="border-t border-gray-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-600 dark:text-gray-500">
       <p>&copy; 2026 Musa Bookstore. All rights reserved.</p>
       <div class="flex gap-4">
-        <a href="#" class="hover:text-indigo-400 transition-colors">Privacy Policy</a>
-        <a href="#" class="hover:text-indigo-400 transition-colors">Terms of Service</a>
-        <a href="#" class="hover:text-indigo-400 transition-colors">Cookie Policy</a>
+        <a href="#" class="text-gray-600 dark:text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Privacy Policy</a>
+        <a href="#" class="text-gray-600 dark:text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Terms of Service</a>
+        <a href="#" class="text-gray-600 dark:text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Cookie Policy</a>
       </div>
     </div>
   </div>
